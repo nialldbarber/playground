@@ -1,0 +1,504 @@
+{
+  "basics": [
+    {
+      "english": "Tuesday",
+      "latvian": "otrdiena"
+    },
+    {
+      "english": "that",
+      "latvian": "tas"
+    },
+    {
+      "english": "dad",
+      "latvian": "tētis"
+    },
+    {
+      "english": "morning",
+      "latvian": "rīts"
+    },
+    {
+      "english": "beside",
+      "latvian": "blakus"
+    },
+    {
+      "english": "August",
+      "latvian": "augusts"
+    },
+    {
+      "english": "very",
+      "latvian": "ļoti"
+    },
+    {
+      "english": "girlfriend",
+      "latvian": "draudzene"
+    },
+    {
+      "english": "child",
+      "latvian": "bērns"
+    },
+    {
+      "english": "boy",
+      "latvian": "zēns"
+    },
+    {
+      "english": "June",
+      "latvian": "jūnijs"
+    },
+    {
+      "english": "you",
+      "latvian": "jūs"
+    },
+    {
+      "english": "wife",
+      "latvian": "sieva"
+    },
+    {
+      "english": "girl",
+      "latvian": "meitene"
+    },
+    {
+      "english": "January",
+      "latvian": "janvāris"
+    },
+    {
+      "english": "July",
+      "latvian": "jūlijs"
+    },
+    {
+      "english": "Saturday",
+      "latvian": "sestdiena"
+    },
+    {
+      "english": "west",
+      "latvian": "rietumi"
+    },
+    {
+      "english": "everybody",
+      "latvian": "visi"
+    },
+    {
+      "english": "she",
+      "latvian": "viņa"
+    },
+    {
+      "english": "tomorrow",
+      "latvian": "rīt"
+    },
+    {
+      "english": "second",
+      "latvian": "sekunde"
+    },
+    {
+      "english": "evening",
+      "latvian": "vakars"
+    },
+    {
+      "english": "love",
+      "latvian": "mīlestība"
+    },
+    {
+      "english": "how",
+      "latvian": "kā"
+    },
+    {
+      "english": "Wednesday",
+      "latvian": "trešdiena"
+    },
+    {
+      "english": "afternoon",
+      "latvian": "pēcpusdiena"
+    },
+    {
+      "english": "often",
+      "latvian": "bieži"
+    },
+    {
+      "english": "boyfriend",
+      "latvian": "draugs"
+    },
+    {
+      "english": "I",
+      "latvian": "es"
+    },
+    {
+      "english": "mother",
+      "latvian": "māte"
+    },
+    {
+      "english": "there",
+      "latvian": "tur"
+    },
+    {
+      "english": "when",
+      "latvian": "kad"
+    },
+    {
+      "english": "husband",
+      "latvian": "vīrs"
+    },
+    {
+      "english": "yesterday",
+      "latvian": "vakar"
+    },
+    {
+      "english": "March",
+      "latvian": "marts"
+    },
+    {
+      "english": "we",
+      "latvian": "mēs"
+    },
+    {
+      "english": "daughter",
+      "latvian": "meita"
+    },
+    {
+      "english": "man",
+      "latvian": "vīrietis"
+    },
+    {
+      "english": "most",
+      "latvian": "visvairāk"
+    },
+    {
+      "english": "where",
+      "latvian": "kur"
+    },
+    {
+      "english": "east",
+      "latvian": "austrumi"
+    },
+    {
+      "english": "week",
+      "latvian": "nedēļa"
+    },
+    {
+      "english": "April",
+      "latvian": "aprīlis"
+    },
+    {
+      "english": "month",
+      "latvian": "mēnesis"
+    },
+    {
+      "english": "who",
+      "latvian": "kas"
+    },
+    {
+      "english": "October",
+      "latvian": "oktobris"
+    },
+    {
+      "english": "Friday",
+      "latvian": "piektdiena"
+    },
+    {
+      "english": "parents",
+      "latvian": "vecāki"
+    },
+    {
+      "english": "not",
+      "latvian": "ne"
+    },
+    {
+      "english": "autumn",
+      "latvian": "rudens"
+    },
+    {
+      "english": "spring",
+      "latvian": "pavasaris"
+    },
+    {
+      "english": "or",
+      "latvian": "vai"
+    },
+    {
+      "english": "less",
+      "latvian": "mazāk"
+    },
+    {
+      "english": "friend",
+      "latvian": "draugs"
+    },
+    {
+      "english": "although",
+      "latvian": "lai gan"
+    },
+    {
+      "english": "mum",
+      "latvian": "mamma"
+    },
+    {
+      "english": "always",
+      "latvian": "vienmēr"
+    },
+    {
+      "english": "day",
+      "latvian": "diena"
+    },
+    {
+      "english": "if",
+      "latvian": "ja"
+    },
+    {
+      "english": "and",
+      "latvian": "un"
+    },
+    {
+      "english": "above",
+      "latvian": "virs"
+    },
+    {
+      "english": "big sister",
+      "latvian": "vecākā māsa"
+    },
+    {
+      "english": "here",
+      "latvian": "šeit"
+    },
+    {
+      "english": "immediately",
+      "latvian": "nekavējoties"
+    },
+    {
+      "english": "morning",
+      "latvian": "rīts"
+    },
+    {
+      "english": "none",
+      "latvian": "neviens"
+    },
+    {
+      "english": "today",
+      "latvian": "šodien"
+    },
+    {
+      "english": "kiss",
+      "latvian": "skūpsts"
+    },
+    {
+      "english": "close",
+      "latvian": "tuvu"
+    },
+    {
+      "english": "winter",
+      "latvian": "ziema"
+    },
+    {
+      "english": "more",
+      "latvian": "vairāk"
+    },
+    {
+      "english": "below",
+      "latvian": "zem"
+    },
+    {
+      "english": "Monday",
+      "latvian": "pirmdiena"
+    },
+    {
+      "english": "big brother",
+      "latvian": "vecākais brālis"
+    },
+    {
+      "english": "far",
+      "latvian": "tālu"
+    },
+    {
+      "english": "right",
+      "latvian": "labais"
+    },
+    {
+      "english": "all",
+      "latvian": "viss"
+    },
+    {
+      "english": "already",
+      "latvian": "jau"
+    },
+    {
+      "english": "because",
+      "latvian": "jo"
+    },
+    {
+      "english": "it",
+      "latvian": "tas"
+    },
+    {
+      "english": "what",
+      "latvian": "kas"
+    },
+    {
+      "english": "why",
+      "latvian": "kāpēc"
+    },
+    {
+      "english": "together",
+      "latvian": "kopā"
+    },
+    {
+      "english": "this",
+      "latvian": "šis"
+    },
+    {
+      "english": "woman",
+      "latvian": "sieviete"
+    },
+    {
+      "english": "other",
+      "latvian": "citi"
+    },
+    {
+      "english": "now",
+      "latvian": "tagad"
+    },
+    {
+      "english": "little brother",
+      "latvian": "mazais brālis"
+    },
+    {
+      "english": "then",
+      "latvian": "tad"
+    },
+    {
+      "english": "December",
+      "latvian": "decembris"
+    },
+    {
+      "english": "May",
+      "latvian": "maijs"
+    },
+    {
+      "english": "actually",
+      "latvian": "īstenībā"
+    },
+    {
+      "english": "little sister",
+      "latvian": "mazā māsa"
+    },
+    {
+      "english": "Sunday",
+      "latvian": "svētdiena"
+    },
+    {
+      "english": "south",
+      "latvian": "dienvidi"
+    },
+    {
+      "english": "left",
+      "latvian": "kreisais"
+    },
+    {
+      "english": "you",
+      "latvian": "tu"
+    },
+    {
+      "english": "sex",
+      "latvian": "sekss"
+    },
+    {
+      "english": "every",
+      "latvian": "katrs"
+    },
+    {
+      "english": "hour",
+      "latvian": "stunda"
+    },
+    {
+      "english": "inside",
+      "latvian": "iekšā"
+    },
+    {
+      "english": "north",
+      "latvian": "ziemeļi"
+    },
+    {
+      "english": "outside",
+      "latvian": "ārā"
+    },
+    {
+      "english": "February",
+      "latvian": "februāris"
+    },
+    {
+      "english": "back",
+      "latvian": "atpakaļ"
+    },
+    {
+      "english": "really",
+      "latvian": "tiešām"
+    },
+    {
+      "english": "son",
+      "latvian": "dēls"
+    },
+    {
+      "english": "summer",
+      "latvian": "vasara"
+    },
+    {
+      "english": "front",
+      "latvian": "priekša"
+    },
+    {
+      "english": "midnight",
+      "latvian": "pusnakts"
+    },
+    {
+      "english": "minute",
+      "latvian": "minūte"
+    },
+    {
+      "english": "he",
+      "latvian": "viņš"
+    },
+    {
+      "english": "again",
+      "latvian": "atkal"
+    },
+    {
+      "english": "night",
+      "latvian": "nakts"
+    },
+    {
+      "english": "Thursday",
+      "latvian": "ceturtdiena"
+    },
+    {
+      "english": "year",
+      "latvian": "gads"
+    },
+    {
+      "english": "November",
+      "latvian": "novembris"
+    },
+    {
+      "english": "father",
+      "latvian": "tēvs"
+    },
+    {
+      "english": "which",
+      "latvian": "kurš"
+    },
+    {
+      "english": "noon",
+      "latvian": "pusdienlaiks"
+    },
+    {
+      "english": "September",
+      "latvian": "septembris"
+    },
+    {
+      "english": "they",
+      "latvian": "viņi / viņas"
+    },
+    {
+      "english": "but",
+      "latvian": "bet"
+    },
+    {
+      "english": "suddenly",
+      "latvian": "pēkšņi"
+    }
+  ]
+}
