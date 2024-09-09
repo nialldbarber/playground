@@ -1,8 +1,9 @@
-import { Pressable, Text, View } from "react-native";
+import { Button } from "@/app/components/Button";
+import { Text, View } from "react-native";
 
 type Props = {
   handleReferral: (url: string) => void;
-}
+};
 
 export function ReferralLink({ handleReferral }: Props) {
   return (
@@ -14,9 +15,14 @@ export function ReferralLink({ handleReferral }: Props) {
             https://myrac.com/referral/1234567890423423424
           </Text>
         </View>
-        <Pressable className="bg-red-400 p-2 rounded-md" onPress={() => handleReferral('https://myrac.com/referral/1234567890423423424')}>
+        <Button
+          className="bg-red-400 p-2 rounded-md"
+          onPress={() =>
+            handleReferral("https://myrac.com/referral/1234567890423423424")
+          }
+        >
           <Text className="text-white text-center font-bold">Copy</Text>
-        </Pressable>
+        </Button>
       </View>
     </View>
   );

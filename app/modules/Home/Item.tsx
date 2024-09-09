@@ -32,7 +32,7 @@ export function Item({ id, index }: { id: number; index: number }) {
       <Pressable
         onPress={() => navigate("HomeItem", { id })}
         onPressIn={() => {
-          itemScale.value = withSpring(0.95);
+          itemScale.value = withSpring(0.97);
         }}
         onPressOut={() => {
           itemScale.value = withSpring(1);

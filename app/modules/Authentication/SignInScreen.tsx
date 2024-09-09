@@ -1,15 +1,20 @@
-import { useContext } from "react";
-import { View } from "react-native";
-
 import { Button } from "@/app/components/Button";
-import { AuthContext } from "@/app/state/auth";
+import { Layout } from "@/app/components/Layout";
+import { OnboardingStackParamList } from "@/app/navigation";
+import { useNavigation } from "@react-navigation/native";
+import type { NativeStackNavigationProp } from "@react-navigation/native-stack";
+
+type IndividualPokemonScreenNavigationProp = NativeStackNavigationProp<
+  OnboardingStackParamList,
+  "OnboardingScreen"
+>;
 
 export function SignInScreen() {
-  const { setIsSignedIn } = useContext(AuthContext);
+  const { navigate } = useNavigation<IndividualPokemonScreenNavigationProp>();
 
   return (
-    <View>
-      <Button onPress={() => setIsSignedIn?.(true)}>Sign in</Button>
-    </View>
+    <Layout>
+      <Button onPress={() => navigate("OnboardingScreen")}>Sign in</Button>
+    </Layout>
   );
 }

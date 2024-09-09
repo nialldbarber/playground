@@ -38,11 +38,11 @@ export const Skeleton = ({
   useEffect(() => {
     if (!isLoading) {
       skeletonOpacity.value = withTiming(0, {
-        duration: 500,
+        duration: 250,
         easing: Easing.linear,
       });
       contentOpacity.value = withTiming(1, {
-        duration: 500,
+        duration: 250,
         easing: Easing.linear,
       });
     } else {

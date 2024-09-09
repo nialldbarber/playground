@@ -8,6 +8,7 @@ import { SignInScreen } from "@/app/modules/Authentication/SignInScreen";
 import { SignOutScreen } from "@/app/modules/Authentication/SignOutScreen";
 import { HomeItemScreen } from "@/app/modules/Home/HomeItemScreen";
 import { HomeScreen } from "@/app/modules/Home/HomeScreen";
+import { OnboardingScreen } from "@/app/modules/Onboarding/OnboardingScreen";
 import { IndividualPokemonScreen } from "@/app/modules/Pokemon/IndividualPokemonScreen";
 import { PokemonPicsScreen } from "@/app/modules/Pokemon/PokemonPicsScreen";
 import { PokemonScreen } from "@/app/modules/Pokemon/PokemonScreen";
@@ -95,6 +96,21 @@ const BottomTabStack = createBottomTabNavigator({
 });
 export type BottomTabStackParamList = StaticParamList<typeof BottomTabStack>;
 
+const OnboardingSignUpStack = createNativeStackNavigator({
+  initialRouteName: "SignIn",
+  screens: {
+    SignIn: SignInScreen,
+    OnboardingScreen: OnboardingScreen,
+  },
+  screenOptions: {
+    headerShown: false,
+  },
+});
+export type OnboardingStackParamList = {
+  SignIn: undefined;
+  OnboardingScreen: undefined;
+};
+
 /** root stack */
 const RootStack = createNativeStackNavigator({
   groups: {
@@ -107,8 +123,9 @@ const RootStack = createNativeStackNavigator({
     },
     SignedOut: {
       if: useIsNotAuthenticated,
+      screenOptions: { headerShown: false },
       screens: {
-        SignIn: SignInScreen,
+        OnboardingSignUpStack,
       },
     },
     Modal: {
