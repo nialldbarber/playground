@@ -7,9 +7,11 @@
     "ios": "react-native run-ios",
     "lint": "eslint .",
     "start": "react-native start",
-    "test": "jest"
+    "test": "jest",
+    "postinstall": "patch-package"
   },
   "dependencies": {
+    "@gluestack-ui/nativewind-utils": "^1.0.23",
     "@react-navigation/bottom-tabs": "^7.0.0-rc.30",
     "@react-navigation/drawer": "^7.0.0-rc.28",
     "@react-navigation/elements": "^2.0.0-rc.22",

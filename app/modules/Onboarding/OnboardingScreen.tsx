@@ -6,8 +6,11 @@ import { PropsWithChildren, useContext, useEffect, useState } from "react";
 import { Text, useWindowDimensions, View } from "react-native";
 import { Gesture, GestureDetector } from "react-native-gesture-handler";
 import Animated, {
+  runOnJS,
   useAnimatedStyle,
   useSharedValue,
+  withDelay,
+  withSpring,
   withTiming,
 } from "react-native-reanimated";
 
@@ -26,7 +29,7 @@ function SectionWrapper({
   const { width, height } = useWindowDimensions();
 
   const opacity = useSharedValue(0);
-  const transformY = useSharedValue(-10);
+  const transformY = useSharedValue(30);
 
   const animatedStyles = useAnimatedStyle(
     () => ({
@@ -42,21 +45,23 @@ function SectionWrapper({
 
   useEffect(() => {
     if (isActive) {
-      opacity.value = withTiming(1);
-      transformY.value = withTiming(0);
+      opacity.value = withDelay(180, withTiming(1));
+      transformY.value = withDelay(180, withTiming(0));
     } else {
-      opacity.value = withTiming(0);
-      transformY.value = withTiming(-10);
+      opacity.value = withDelay(180, withTiming(0));
+      transformY.value = withDelay(180, withTiming(30));
     }
   }, [isActive]);
 
   return (
-    <Animated.View
-      style={[{ width, height, backgroundColor }, animatedStyles]}
-      className="justify-center items-center"
-    >
-      {children}
-    </Animated.View>
+    <View style={[{ backgroundColor }]}>
+      <Animated.View
+        style={[{ width, height }, animatedStyles]}
+        className="justify-center items-center"
+      >
+        {children}
+      </Animated.View>
+    </View>
   );
 }
 
@@ -68,6 +73,9 @@ export function OnboardingScreen() {
   const currentIndex = useSharedValue(0);
 
   const [currentIndexText, setCurrentIndexText] = useState(0);
+  const updateCurrentIndexState = (value: number) => {
+    setCurrentIndexText(value);
+  };
 
   const panGesture = Gesture.Pan()
     .onUpdate((event) => {
@@ -80,6 +88,7 @@ export function OnboardingScreen() {
       if (Math.abs(event.translationX) > width / 2) {
         if (nextIndex >= 0 && nextIndex <= 2) {
           currentIndex.value = nextIndex;
+          runOnJS(updateCurrentIndexState)(nextIndex);
         }
       }
 
@@ -95,19 +104,8 @@ export function OnboardingScreen() {
   const goToScreen = (index: number) => {
     currentIndex.value = index;
     translateX.value = withTiming(-index * width);
+    updateCurrentIndexState(index);
   };
-
-  useEffect(() => {
-    // Sync animated value with React state
-    const id = currentIndex.value;
-    const unsubscribe = currentIndex.addListener((value) => {
-      setCurrentIndexText(value);
-    });
-
-    return () => {
-      currentIndex.removeListener(id);
-    };
-  }, []);
 
   return (
     <>
@@ -115,19 +113,19 @@ export function OnboardingScreen() {
         <GestureDetector gesture={panGesture}>
           <Animated.View style={[{ flexDirection: "row" }, animatedStyle]}>
             <SectionWrapper
-              isActive={currentIndex.value === 0}
+              isActive={currentIndexText === 0}
               backgroundColor={ORANGE}
             >
               <Text className="text-white text-4xl font-bold">Name</Text>
             </SectionWrapper>
             <SectionWrapper
-              isActive={currentIndex.value === 1}
+              isActive={currentIndexText === 1}
               backgroundColor={ORANGE_ONE}
             >
               <Text className="text-white text-4xl font-bold">Password</Text>
             </SectionWrapper>
             <SectionWrapper
-              isActive={currentIndex.value === 2}
+              isActive={currentIndexText === 2}
               backgroundColor={ORANGE_TWO}
             >
               <Text className="text-white text-4xl font-bold">DOB</Text>
@@ -141,7 +139,6 @@ export function OnboardingScreen() {
       <View className="absolute bottom-5 w-full h-20 z-10">
         <View className="flex items-center justify-center">
           <Dots count={3} activeIndex={currentIndex} goToScreen={goToScreen} />
-          <Text>{currentIndexText}</Text>
         </View>
       </View>
     </>
