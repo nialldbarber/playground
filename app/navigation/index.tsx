@@ -1,6 +1,7 @@
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import type { StaticParamList } from "@react-navigation/native";
 import { createStaticNavigation } from "@react-navigation/native";
+import type { NativeStackScreenProps } from "@react-navigation/native-stack";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import { Book1, Grammerly, Home2, Profile } from "iconsax-react-native";
 
@@ -25,10 +26,14 @@ const HomeStack = createNativeStackNavigator({
     HomeItem: HomeItemScreen,
   },
 });
-export type HomeStackParamList = {
+type HomeStackParamList = {
   Home: undefined;
   HomeItem: { id: string | number };
 };
+export type HomeItemNavigation = NativeStackScreenProps<
+  HomeStackParamList,
+  "HomeItem"
+>;
 
 const PokemonStack = createNativeStackNavigator({
   initialRouteName: "Pokemon",
@@ -132,6 +137,8 @@ const RootStack = createNativeStackNavigator({
       if: useIsAuthenticated,
       screenOptions: {
         presentation: "modal",
+        headerShown: false,
+        contentStyle: { backgroundColor: "transparent" },
       },
       screens: {
         Settings: SettingsScreen,

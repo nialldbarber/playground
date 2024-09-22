@@ -1,6 +1,4 @@
-import { HomeStackParamList } from "@/app/navigation";
-import { useNavigation } from "@react-navigation/native";
-import { NativeStackNavigationProp } from "@react-navigation/native-stack";
+import { HomeItemNavigation } from "@/app/navigation";
 import { Pressable, useWindowDimensions } from "react-native";
 import Animated, {
   useAnimatedStyle,
@@ -8,13 +6,12 @@ import Animated, {
   withSpring,
 } from "react-native-reanimated";
 
-type HomeItemNavigation = NativeStackNavigationProp<
-  HomeStackParamList,
-  "HomeItem"
->;
+type Props = {
+  id: number;
+  index: number;
+} & HomeItemNavigation;
 
-export function Item({ id, index }: { id: number; index: number }) {
-  const { navigate } = useNavigation<HomeItemNavigation>();
+export function Item({ id, index, navigate }: Props) {
   const { width } = useWindowDimensions();
   const itemScale = useSharedValue(1);
 

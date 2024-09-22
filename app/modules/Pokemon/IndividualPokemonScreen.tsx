@@ -2,7 +2,7 @@ import { RouteProp, useNavigation, useRoute } from "@react-navigation/native";
 import type { NativeStackNavigationProp } from "@react-navigation/native-stack";
 import { Text, View } from "react-native";
 
-import { Button } from "@/app/components/Button";
+import { Button } from "@/app/components/Button/Button";
 import { Layout } from "@/app/components/Layout";
 import { useGetIndividualPokemon } from "@/app/modules/Pokemon/pokemon.queries";
 import { PokemonStackParamList } from "@/app/navigation";

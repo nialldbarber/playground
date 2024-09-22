@@ -1,4 +1,4 @@
-import { Button } from "@/app/components/Button";
+import { Button } from "@/app/components/Button/Button";
 import { Text, View } from "react-native";
 
 type Props = {

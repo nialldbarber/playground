@@ -1,8 +1,9 @@
-import { Button } from "@/app/components/Button";
+import { Button } from "@/app/components/Button/Button";
 import { Dots } from "@/app/components/Dots";
 import { Layout } from "@/app/components/Layout";
-import { AuthContext } from "@/app/state/auth";
-import { PropsWithChildren, useContext, useEffect, useState } from "react";
+import { isSignedInAtom } from "@/app/state/auth";
+import { useSetAtom } from "jotai";
+import { PropsWithChildren, useEffect, useState } from "react";
 import { Text, useWindowDimensions, View } from "react-native";
 import { Gesture, GestureDetector } from "react-native-gesture-handler";
 import Animated, {
@@ -10,7 +11,6 @@ import Animated, {
   useAnimatedStyle,
   useSharedValue,
   withDelay,
-  withSpring,
   withTiming,
 } from "react-native-reanimated";
 
@@ -66,7 +66,7 @@ function SectionWrapper({
 }
 
 export function OnboardingScreen() {
-  const { setIsSignedIn } = useContext(AuthContext);
+  const setIsSignedIn = useSetAtom(isSignedInAtom);
 
   const { width } = useWindowDimensions();
   const translateX = useSharedValue(0);

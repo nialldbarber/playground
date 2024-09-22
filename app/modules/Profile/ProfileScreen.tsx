@@ -1,4 +1,4 @@
-import { Button } from "@/app/components/Button";
+import { Button } from "@/app/components/Button/Button";
 import { Layout } from "@/app/components/Layout";
 import { useEffect, useState } from "react";
 import type { NativeScrollEvent, NativeSyntheticEvent } from "react-native";
@@ -60,7 +60,7 @@ export function ProfileScreen() {
     <>
       <Layout onScroll={handleScroll} scrollEventThrottle={16}>
         <View className="justify-between pt-3 pb-10 px-5">
-          {Array.from({ length: 100 }).map((item, index) => (
+          {Array.from({ length: 100 }).map((_, index) => (
             <Text key={index} className="text-4xl font-bold">
               Profile
             </Text>
@@ -72,6 +72,8 @@ export function ProfileScreen() {
           style={staticButtonStyles}
         >
           <Button>Add stuff</Button>
+          <Button size="medium">Add stuff</Button>
+          <Button size="large">Add stuff</Button>
         </Animated.View>
       </Layout>
       {/* absolute button */}

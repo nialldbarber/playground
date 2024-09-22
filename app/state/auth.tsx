@@ -1,34 +1,13 @@
-import { createContext, useContext, useState } from "react";
+import { atom, useAtomValue } from "jotai";
 
-import type { PropsWithChildren } from "react";
-
-export const AuthContext = createContext<{
-	isSignedIn: boolean;
-	setIsSignedIn?: (isSignedIn: boolean) => void;
-}>({
-	isSignedIn: false,
-});
+export const isSignedInAtom = atom(false);
 
 export function useIsAuthenticated() {
-	const isAuthed = useContext(AuthContext);
-	return isAuthed.isSignedIn;
+  const isAuthed = useAtomValue(isSignedInAtom);
+  return isAuthed;
 }
 
 export function useIsNotAuthenticated() {
-	const isNotAuthed = !useIsAuthenticated();
-	return isNotAuthed;
+  const isNotAuthed = !useIsAuthenticated();
+  return isNotAuthed;
 }
-
-export const AuthProvider = (props: PropsWithChildren<{}>) => {
-	const [isSignedIn, setIsSignedIn] = useState(false);
-	return (
-		<AuthContext.Provider
-			value={{
-				isSignedIn,
-				setIsSignedIn,
-			}}
-		>
-			{props.children}
-		</AuthContext.Provider>
-	);
-};

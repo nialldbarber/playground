@@ -3,6 +3,7 @@ import { useEffect, useState } from "react";
 import { Pressable, Text, View, useWindowDimensions } from "react-native";
 
 import { Layout } from "@/app/components/Layout";
+import { ServiceBanners } from "@/app/components/ServiceBanner";
 import { Skeleton } from "@/app/components/Skeleton";
 import { Item } from "@/app/modules/Home/Item";
 
@@ -39,6 +40,7 @@ export function HomeScreen() {
           <Text className="font-bold text-white">Settings</Text>
         </Pressable>
       </View>
+      <ServiceBanners />
       <View className="flex-row flex-wrap items-center justify-around mt-5">
         {Array.from({ length: 10 }).map((_, index) => {
           const id = index + 100;

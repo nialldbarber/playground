@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { Text, View, useWindowDimensions } from "react-native";
 
-import { Button } from "@/app/components/Button";
+import { Button } from "@/app/components/Button/Button";
 import { Layout } from "@/app/components/Layout";
 import { Skeleton } from "@/app/components/Skeleton";
 import { useGetWords } from "@/app/modules/Words/words.queries";
