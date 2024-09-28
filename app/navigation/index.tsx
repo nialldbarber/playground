@@ -1,7 +1,7 @@
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import type { StaticParamList } from "@react-navigation/native";
 import { createStaticNavigation } from "@react-navigation/native";
-import type { NativeStackScreenProps } from "@react-navigation/native-stack";
+import type { NativeStackNavigationProp } from "@react-navigation/native-stack";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import { Book1, Grammerly, Home2, Profile } from "iconsax-react-native";
 
@@ -19,141 +19,143 @@ import { WordScreen } from "@/app/modules/Words/WordsScreen";
 import { useIsAuthenticated, useIsNotAuthenticated } from "@/app/state/auth";
 
 const HomeStack = createNativeStackNavigator({
-  initialRouteName: "Home",
-  screenOptions: { headerShown: false },
-  screens: {
-    Home: HomeScreen,
-    HomeItem: HomeItemScreen,
-  },
+	initialRouteName: "Home",
+	screenOptions: { headerShown: false },
+	screens: {
+		Home: HomeScreen,
+		HomeItem: HomeItemScreen,
+	},
 });
-type HomeStackParamList = {
-  Home: undefined;
-  HomeItem: { id: string | number };
+export type HomeStackParamList = {
+	Home: undefined;
+	HomeItem: { id: string | number };
 };
-export type HomeItemNavigation = NativeStackScreenProps<
-  HomeStackParamList,
-  "HomeItem"
->;
 
 const PokemonStack = createNativeStackNavigator({
-  initialRouteName: "Pokemon",
-  screenOptions: { headerShown: false },
-  screens: {
-    Pokemon: PokemonScreen,
-    IndividualPokemon: IndividualPokemonScreen,
-    PokemonPics: PokemonPicsScreen,
-  },
+	initialRouteName: "Pokemon",
+	screenOptions: { headerShown: false },
+	screens: {
+		Pokemon: PokemonScreen,
+		IndividualPokemon: IndividualPokemonScreen,
+		PokemonPics: PokemonPicsScreen,
+	},
 });
 export type PokemonStackParamList = {
-  Pokemon: undefined;
-  IndividualPokemon: { pokemonName: string };
-  PokemonPics: undefined;
+	Pokemon: undefined;
+	IndividualPokemon: { pokemonName: string };
+	PokemonPics: undefined;
 };
 
 /** bottom tab stack */
 const BottomTabStack = createBottomTabNavigator({
-  initialRouteName: "HomeStack",
-  screens: {
-    HomeStack,
-    Profile: ProfileScreen,
-    Words: WordScreen,
-    PokemonStack,
-  },
-  screenOptions: ({ route }) => ({
-    headerShown: false,
-    animation: "shift",
-    tabBarIcon: ({ focused, color, size }) => {
-      if (route.name === "HomeStack") {
-        return (
-          <Home2
-            size="32"
-            color="#FF8A65"
-            variant={focused ? "Bold" : "Outline"}
-          />
-        );
-      } else if (route.name === "Profile") {
-        return (
-          <Profile
-            size="32"
-            color="#FF8A65"
-            variant={focused ? "Bold" : "Outline"}
-          />
-        );
-      } else if (route.name === "Words") {
-        return (
-          <Book1
-            size="32"
-            color="#FF8A65"
-            variant={focused ? "Bold" : "Outline"}
-          />
-        );
-      } else if (route.name === "PokemonStack") {
-        return (
-          <Grammerly
-            size="32"
-            color="#FF8A65"
-            variant={focused ? "Bold" : "Outline"}
-          />
-        );
-      }
-    },
-  }),
+	initialRouteName: "HomeStack",
+	screens: {
+		HomeStack,
+		Profile: ProfileScreen,
+		Words: WordScreen,
+		PokemonStack,
+	},
+	screenOptions: ({ route }) => ({
+		headerShown: false,
+		animation: "shift",
+		tabBarIcon: ({ focused, color, size }) => {
+			if (route.name === "HomeStack") {
+				return (
+					<Home2
+						size="32"
+						color="#FF8A65"
+						variant={focused ? "Bold" : "Outline"}
+					/>
+				);
+			}
+			if (route.name === "Profile") {
+				return (
+					<Profile
+						size="32"
+						color="#FF8A65"
+						variant={focused ? "Bold" : "Outline"}
+					/>
+				);
+			}
+			if (route.name === "Words") {
+				return (
+					<Book1
+						size="32"
+						color="#FF8A65"
+						variant={focused ? "Bold" : "Outline"}
+					/>
+				);
+			}
+			if (route.name === "PokemonStack") {
+				return (
+					<Grammerly
+						size="32"
+						color="#FF8A65"
+						variant={focused ? "Bold" : "Outline"}
+					/>
+				);
+			}
+		},
+	}),
 });
 export type BottomTabStackParamList = StaticParamList<typeof BottomTabStack>;
 
 const OnboardingSignUpStack = createNativeStackNavigator({
-  initialRouteName: "SignIn",
-  screens: {
-    SignIn: SignInScreen,
-    OnboardingScreen: OnboardingScreen,
-  },
-  screenOptions: {
-    headerShown: false,
-  },
+	initialRouteName: "SignIn",
+	screens: {
+		SignIn: SignInScreen,
+		OnboardingScreen: OnboardingScreen,
+	},
+	screenOptions: {
+		headerShown: false,
+	},
 });
 export type OnboardingStackParamList = {
-  SignIn: undefined;
-  OnboardingScreen: undefined;
+	SignIn: undefined;
+	OnboardingScreen: undefined;
 };
+export type OnboardingSignUpScreenProps = NativeStackNavigationProp<
+	OnboardingStackParamList,
+	"SignIn"
+>;
 
 /** root stack */
 const RootStack = createNativeStackNavigator({
-  groups: {
-    SignedIn: {
-      if: useIsAuthenticated,
-      screenOptions: { headerShown: false },
-      screens: {
-        BottomTabStack,
-      },
-    },
-    SignedOut: {
-      if: useIsNotAuthenticated,
-      screenOptions: { headerShown: false },
-      screens: {
-        OnboardingSignUpStack,
-      },
-    },
-    Modal: {
-      if: useIsAuthenticated,
-      screenOptions: {
-        presentation: "modal",
-        headerShown: false,
-        contentStyle: { backgroundColor: "transparent" },
-      },
-      screens: {
-        Settings: SettingsScreen,
-        SignOut: SignOutScreen,
-      },
-    },
-  },
+	groups: {
+		SignedIn: {
+			if: useIsAuthenticated,
+			screenOptions: { headerShown: false },
+			screens: {
+				BottomTabStack,
+			},
+		},
+		SignedOut: {
+			if: useIsNotAuthenticated,
+			screenOptions: { headerShown: false },
+			screens: {
+				OnboardingSignUpStack,
+			},
+		},
+		Modal: {
+			if: useIsAuthenticated,
+			screenOptions: {
+				presentation: "modal",
+				headerShown: false,
+				contentStyle: { backgroundColor: "transparent" },
+			},
+			screens: {
+				Settings: SettingsScreen,
+				SignOut: SignOutScreen,
+			},
+		},
+	},
 });
-
 type RootStackParamList = StaticParamList<typeof RootStack>;
 
 declare global {
-  namespace ReactNavigation {
-    interface RootParamList extends RootStackParamList {}
-  }
+	namespace ReactNavigation {
+		interface RootParamList extends RootStackParamList {}
+	}
 }
 
 export const Navigation = createStaticNavigation(RootStack);

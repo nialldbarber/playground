@@ -1,6 +1,7 @@
 import type { PropsWithChildren } from "react";
 import { forwardRef, useCallback } from "react";
 import type {
+	AccessibilityRole,
 	GestureResponderEvent,
 	PressableProps,
 	ViewStyle,
@@ -15,9 +16,11 @@ import type {
 	ButtonSize,
 	ButtonVariant,
 } from "@/app/components/Button/types";
+import { useA11y } from "@/app/design-system/hooks/useA11y";
 
 interface Props extends PressableProps {
 	style?: ViewStyle;
+	width?: "compact" | "full";
 	className?: string;
 	variant?: ButtonVariant;
 	size?: ButtonSize;
@@ -32,6 +35,7 @@ export const Button = forwardRef<Animated.View, PropsWithChildren<Props>>(
 		{
 			variant = "primary",
 			size = "medium",
+			width = "compact",
 			isDisabled = false,
 			isLoading = false,
 			animation = "scale",
@@ -49,6 +53,12 @@ export const Button = forwardRef<Animated.View, PropsWithChildren<Props>>(
 		const { handlePressIn, handlePressOut, animatedStyles } =
 			useButtonAnimations(isDisabled, animation);
 
+		const a11yProps = useA11y({
+			label: accessibilityLabel ?? `${children} button`,
+			role: role as AccessibilityRole,
+			state: { disabled: isDisabled, busy: isLoading },
+		});
+
 		const handlePress = useCallback(
 			(event: GestureResponderEvent) => {
 				if (isDisabled || isLoading) return;
@@ -56,16 +66,13 @@ export const Button = forwardRef<Animated.View, PropsWithChildren<Props>>(
 			},
 			[isDisabled, isLoading, onPress],
 		);
-		const a11yLabel = accessibilityLabel ?? `${children} button`;
 
 		return (
 			<Animated.View
 				ref={ref}
-				style={[animatedStyles, styles.container, style]}
+				style={[animatedStyles, styles.container(width), style]}
 				className={className}
-				accessible
-				accessibilityLabel={a11yLabel}
-				accessibilityState={{ disabled: isDisabled, busy: isLoading }}
+				{...a11yProps}
 			>
 				<Pressable
 					role={role}
@@ -82,10 +89,10 @@ export const Button = forwardRef<Animated.View, PropsWithChildren<Props>>(
 	},
 );
 
-const stylesheet = createStyleSheet(({ colors, units, fontSize, radii }) => ({
-	container: {
+const stylesheet = createStyleSheet(({ colors, spacing, fontSize, radii }) => ({
+	container: (width: "compact" | "full") => ({
 		position: "relative",
-		flex: 1,
+		flex: width === "full" ? 1 : undefined,
 		backgroundColor: colors.blue400,
 		borderRadius: radii.md,
 		variants: {
@@ -106,21 +113,21 @@ const stylesheet = createStyleSheet(({ colors, units, fontSize, radii }) => ({
 				},
 			},
 		},
-	},
+	}),
 	button: {
 		justifyContent: "center",
 		alignItems: "center",
-		padding: units[4],
+		padding: spacing[4],
 		variants: {
 			size: {
 				small: {
-					padding: units[2],
+					padding: spacing[2],
 				},
 				medium: {
-					padding: units[4],
+					padding: spacing[4],
 				},
 				large: {
-					padding: units[8],
+					padding: spacing[8],
 				},
 			},
 		},
