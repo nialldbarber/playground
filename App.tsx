@@ -1,9 +1,9 @@
 import { useNavigationContainerRef } from "@react-navigation/native";
 import { QueryClientProvider } from "@tanstack/react-query";
-import { Text } from "react-native";
 import { GestureHandlerRootView } from "react-native-gesture-handler";
 
 import { queryClient } from "@/app/api";
+import { Text } from "@/app/components/Text";
 import "@/app/global.css";
 import { Navigation } from "@/app/navigation";
 

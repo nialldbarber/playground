@@ -20,7 +20,10 @@ import { useIsAuthenticated, useIsNotAuthenticated } from "@/app/state/auth";
 
 const HomeStack = createNativeStackNavigator({
 	initialRouteName: "Home",
-	screenOptions: { headerShown: false },
+	screenOptions: {
+		headerShown: false,
+		contentStyle: { backgroundColor: "white" },
+	},
 	screens: {
 		Home: HomeScreen,
 		HomeItem: HomeItemScreen,
@@ -141,7 +144,7 @@ const RootStack = createNativeStackNavigator({
 			screenOptions: {
 				presentation: "modal",
 				headerShown: false,
-				contentStyle: { backgroundColor: "transparent" },
+				contentStyle: { backgroundColor: "white" },
 			},
 			screens: {
 				Settings: SettingsScreen,

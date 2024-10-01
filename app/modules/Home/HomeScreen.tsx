@@ -1,11 +1,12 @@
 import { useNavigation } from "@react-navigation/native";
 import { useEffect, useState } from "react";
-import { Text, View, useWindowDimensions } from "react-native";
+import { View, useWindowDimensions } from "react-native";
 
 import { Button } from "@/app/components/Button/Button";
 import { Layout } from "@/app/components/Layout";
 import { ServiceBanners } from "@/app/components/ServiceBanner";
 import { Skeleton } from "@/app/components/Skeleton";
+import { Text } from "@/app/components/Text";
 import { Item } from "@/app/modules/Home/Item";
 
 export function HomeScreen() {

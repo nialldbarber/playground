@@ -21,15 +21,28 @@ import Animated, {
 } from "react-native-reanimated";
 import { createStyleSheet, useStyles } from "react-native-unistyles";
 
-const CANVAS_SIZE = 100;
-const CIRCLE_SIZE = 60;
-const STROKE_WIDTH = 8;
-const CANVAS_RADIUS = (CIRCLE_SIZE - STROKE_WIDTH) / 2;
-const CIRCLR_X_Y = CANVAS_SIZE / 2;
+import type { ColorKeys } from "@/app/design-system/colors";
 
-export function Spinner() {
+type Props = {
+	color?: ColorKeys;
+	size?: number;
+	circleSize?: number;
+	strokeWidth?: number;
+	blur?: boolean;
+};
+
+export function Spinner({
+	color = "primary",
+	size = 100,
+	circleSize = 60,
+	strokeWidth = 8,
+	blur = true,
+}: Props) {
 	const { styles, theme } = useStyles(stylesheet);
 	const loading = useSharedValue(0);
+
+	const CANVAS_RADIUS = (circleSize - strokeWidth) / 2;
+	const CIRCLR_X_Y = size / 2;
 
 	const loadingPath = useMemo(() => {
 		const path = Skia.Path.Make();
@@ -65,14 +78,14 @@ export function Spinner() {
 			>
 				<Canvas
 					style={{
-						width: CANVAS_SIZE,
-						height: CANVAS_SIZE,
+						width: size,
+						height: size,
 					}}
 				>
 					<Path
 						path={loadingPath}
 						style="stroke"
-						strokeWidth={STROKE_WIDTH}
+						strokeWidth={strokeWidth}
 						strokeCap="round"
 						color={theme.colors.blue200}
 						start={loadingStartValue}
@@ -80,9 +93,10 @@ export function Spinner() {
 					>
 						<SweepGradient
 							c={vec(CIRCLR_X_Y, CIRCLR_X_Y)}
-							colors={[theme.colors.primary]}
+							colors={[theme.colors[color]]}
 						/>
-						<BlurMask blur={4} style="solid" />
+
+						{blur && <BlurMask blur={4} style="solid" />}
 					</Path>
 				</Canvas>
 			</Animated.View>

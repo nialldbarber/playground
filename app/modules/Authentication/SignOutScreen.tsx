@@ -1,8 +1,9 @@
 import { BlurView } from "expo-blur";
 import { useSetAtom } from "jotai";
-import { Pressable, Text } from "react-native";
+import { Pressable } from "react-native";
 
 import { Layout } from "@/app/components/Layout";
+import { Text } from "@/app/components/Text";
 import { isSignedInAtom } from "@/app/state/auth";
 
 export function SignOutScreen() {

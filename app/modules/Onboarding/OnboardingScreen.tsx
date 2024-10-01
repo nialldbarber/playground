@@ -1,6 +1,6 @@
 import { useSetAtom } from "jotai";
 import { type PropsWithChildren, useEffect, useState } from "react";
-import { Text, View, useWindowDimensions } from "react-native";
+import { View, useWindowDimensions } from "react-native";
 import { Gesture, GestureDetector } from "react-native-gesture-handler";
 import Animated, {
 	runOnJS,
@@ -13,6 +13,7 @@ import Animated, {
 import { Button } from "@/app/components/Button/Button";
 import { Dots } from "@/app/components/Dots";
 import { Layout } from "@/app/components/Layout";
+import { Text } from "@/app/components/Text";
 import { isSignedInAtom } from "@/app/state/auth";
 
 const ORANGE = "rgba(249, 81, 8, 1)";
@@ -52,7 +53,7 @@ function SectionWrapper({
 			opacity.value = withDelay(180, withTiming(0));
 			transformY.value = withDelay(180, withTiming(30));
 		}
-	}, [isActive]);
+	}, [isActive, opacity, transformY]);
 
 	return (
 		<View style={[{ backgroundColor }]}>
@@ -117,19 +118,25 @@ export function OnboardingScreen() {
 							isActive={currentIndexText === 0}
 							backgroundColor={ORANGE}
 						>
-							<Text className="text-white text-4xl font-bold">Name</Text>
+							<Text color="white" size="4xl" weight="bold">
+								Name
+							</Text>
 						</SectionWrapper>
 						<SectionWrapper
 							isActive={currentIndexText === 1}
 							backgroundColor={ORANGE_ONE}
 						>
-							<Text className="text-white text-4xl font-bold">Password</Text>
+							<Text color="white" size="4xl" weight="bold">
+								Password
+							</Text>
 						</SectionWrapper>
 						<SectionWrapper
 							isActive={currentIndexText === 2}
 							backgroundColor={ORANGE_TWO}
 						>
-							<Text className="text-white text-4xl font-bold">DOB</Text>
+							<Text color="white" size="4xl" weight="bold">
+								DOB
+							</Text>
 							<Button className="w-full" onPress={() => setIsSignedIn?.(true)}>
 								Log in
 							</Button>

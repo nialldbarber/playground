@@ -11,7 +11,9 @@
     "postinstall": "patch-package"
   },
   "dependencies": {
+    "@capsizecss/core": "^4.1.2",
     "@gluestack-ui/nativewind-utils": "^1.0.23",
+    "@gorhom/bottom-sheet": "^5.0.0-alpha.11",
     "@react-navigation/bottom-tabs": "^7.0.0-rc.30",
     "@react-navigation/drawer": "^7.0.0-rc.28",
     "@react-navigation/elements": "^2.0.0-rc.22",
@@ -26,6 +28,7 @@
     "expo-constants": "~16.0.2",
     "iconsax-react-native": "^0.0.8",
     "jotai": "^2.9.3",
+    "lodash.mapvalues": "^4.6.0",
     "nativewind": "^4.1.1",
     "react": "18.3.1",
     "react-keyed-flatten-children": "^3.0.2",

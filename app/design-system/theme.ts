@@ -4,6 +4,7 @@ import { colors } from "@/app/design-system/colors";
 import {
 	fontSize,
 	fontWeight,
+	letterSpacing,
 	lineHeight,
 	radii,
 	spacing,
@@ -14,6 +15,7 @@ export const theme = {
 	spacing,
 	fontSize,
 	fontWeight,
+	letterSpacing,
 	lineHeight,
 	radii,
 } as const;

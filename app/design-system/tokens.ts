@@ -47,6 +47,22 @@ export const fontSize = {
 } as const;
 export type FontSize = keyof typeof fontSize;
 
+export const letterSpacing = {
+	xs: 0.54,
+	sm: 0.56,
+	base: 0.6,
+	md: 0.6,
+	lg: 0.64,
+	xl: 0.68,
+	"2xl": 0.72,
+	"3xl": 0.75,
+	"4xl": 0.8,
+	"5xl": 0.85,
+	"6xl": 0.9,
+	"7xl": 0.95,
+} as const;
+export type LetterSpacing = keyof typeof letterSpacing;
+
 export const fontWeight = {
 	normal: "PlusJakartaSans-Regular",
 	bold: "PlusJakartaSans-Bold",
@@ -57,12 +73,17 @@ export const fontWeight = {
 export type FontWeight = keyof typeof fontWeight;
 
 export const lineHeight = {
-	normal: 24,
-	none: 16,
-	tight: 20,
-	snug: 22,
-	relaxed: 26,
-	loose: 32,
+	xs: 16,
+	sm: 18,
+	base: 22,
+	lg: 24,
+	xl: 28,
+	"2xl": 32,
+	"3xl": 36,
+	"4xl": 40,
+	"5xl": 58,
+	"6xl": 64,
+	"7xl": 84,
 } as const;
 export type LineHeight = keyof typeof lineHeight;
 

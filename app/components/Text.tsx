@@ -7,17 +7,21 @@ import type { ColorKeys } from "@/app/design-system/colors";
 import type { FontSize, FontWeight } from "@/app/design-system/tokens";
 import { renderStringWithEmoji } from "@/app/design-system/utils/renderWithEmoji";
 
+type Decoration = "underline" | "line-through" | "none";
+
 interface Props extends TextProps {
 	size?: FontSize;
 	weight?: FontWeight;
 	color?: ColorKeys;
+	decoration?: Decoration;
 	withEmoji?: boolean;
 }
 
 export function Text({
 	size = "base",
-	weight = "normal",
+	weight = "medium",
 	color = "black",
+	decoration = "none",
 	withEmoji = false,
 	children,
 	...props
@@ -29,14 +33,8 @@ export function Text({
 			if (typeof child === "string") {
 				return withEmoji ? renderStringWithEmoji(child) : child;
 			}
-			if (React.isValidElement(child)) {
-				return React.cloneElement(child, {
-					// @ts-expect-error
-					style: {
-						...child.props.style,
-						alignSelf: "baseline",
-					},
-				});
+			if (React.isValidElement(child) && child.type === Text) {
+				return React.cloneElement(child, { ...child.props });
 			}
 			return child;
 		});
@@ -44,7 +42,7 @@ export function Text({
 
 	return (
 		<NativeText
-			style={styles.container(color)}
+			style={[styles.container(color), props.style]}
 			maxFontSizeMultiplier={1.5}
 			{...props}
 		>
@@ -53,62 +51,86 @@ export function Text({
 	);
 }
 
-const stylesheet = createStyleSheet(({ fontSize, fontWeight, colors }) => ({
-	container: (color: ColorKeys) => ({
-		color: colors[color],
-		variants: {
-			size: {
-				xs: {
-					fontSize: fontSize.xs,
+const stylesheet = createStyleSheet(
+	({ fontSize, fontWeight, letterSpacing, lineHeight, colors }) => ({
+		container: (color: ColorKeys) => ({
+			color: colors[color],
+			variants: {
+				size: {
+					xs: {
+						fontSize: fontSize.xs,
+						letterSpacing: letterSpacing.xs,
+						lineHeight: lineHeight.xs,
+					},
+					sm: {
+						fontSize: fontSize.sm,
+						letterSpacing: letterSpacing.sm,
+						lineHeight: lineHeight.sm,
+					},
+					base: {
+						fontSize: fontSize.base,
+						letterSpacing: letterSpacing.base,
+						lineHeight: lineHeight.base,
+					},
+					lg: {
+						fontSize: fontSize.lg,
+						letterSpacing: letterSpacing.lg,
+						lineHeight: lineHeight.lg,
+					},
+					xl: {
+						fontSize: fontSize.xl,
+						letterSpacing: letterSpacing.xl,
+						lineHeight: lineHeight.xl,
+					},
+					"2xl": {
+						fontSize: fontSize["2xl"],
+						letterSpacing: letterSpacing["2xl"],
+						lineHeight: lineHeight["2xl"],
+					},
+					"3xl": {
+						fontSize: fontSize["3xl"],
+						letterSpacing: letterSpacing["3xl"],
+						lineHeight: lineHeight["3xl"],
+					},
+					"4xl": {
+						fontSize: fontSize["4xl"],
+						letterSpacing: letterSpacing["4xl"],
+						lineHeight: lineHeight["4xl"],
+					},
+					"5xl": {
+						fontSize: fontSize["5xl"],
+						letterSpacing: letterSpacing["5xl"],
+						lineHeight: lineHeight["5xl"],
+					},
+					"6xl": {
+						fontSize: fontSize["6xl"],
+						letterSpacing: letterSpacing["6xl"],
+						lineHeight: lineHeight["6xl"],
+					},
+					"7xl": {
+						fontSize: fontSize["7xl"],
+						letterSpacing: letterSpacing["7xl"],
+						lineHeight: lineHeight["7xl"],
+					},
 				},
-				sm: {
-					fontSize: fontSize.sm,
-				},
-				base: {
-					fontSize: fontSize.base,
-				},
-				lg: {
-					fontSize: fontSize.lg,
-				},
-				xl: {
-					fontSize: fontSize.xl,
-				},
-				"2xl": {
-					fontSize: fontSize["2xl"],
-				},
-				"3xl": {
-					fontSize: fontSize["3xl"],
-				},
-				"4xl": {
-					fontSize: fontSize["4xl"],
-				},
-				"5xl": {
-					fontSize: fontSize["5xl"],
-				},
-				"6xl": {
-					fontSize: fontSize["6xl"],
-				},
-				"7xl": {
-					fontSize: fontSize["7xl"],
+				weight: {
+					normal: {
+						fontFamily: fontWeight.normal,
+					},
+					bold: {
+						fontFamily: fontWeight.bold,
+					},
+					semibold: {
+						fontFamily: fontWeight.semibold,
+					},
+					medium: {
+						fontFamily: fontWeight.medium,
+					},
+					light: {
+						fontFamily: fontWeight.light,
+					},
 				},
 			},
-			weight: {
-				normal: {
-					fontFamily: fontWeight.normal,
-				},
-				bold: {
-					fontFamily: fontWeight.bold,
-				},
-				semibold: {
-					fontFamily: fontWeight.semibold,
-				},
-				medium: {
-					fontFamily: fontWeight.medium,
-				},
-				light: {
-					fontFamily: fontWeight.light,
-				},
-			},
-		},
+		}),
 	}),
-}));
+);
