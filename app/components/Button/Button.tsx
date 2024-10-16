@@ -145,6 +145,7 @@ const stylesheet = createStyleSheet(
 		button: {
 			justifyContent: "center",
 			alignItems: "center",
+			paddingHorizontal: spacing[4],
 			variants: {
 				size: {
 					small: {

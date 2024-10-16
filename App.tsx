@@ -1,3 +1,4 @@
+import { BottomSheetModalProvider } from "@gorhom/bottom-sheet";
 import { useNavigationContainerRef } from "@react-navigation/native";
 import { QueryClientProvider } from "@tanstack/react-query";
 import { GestureHandlerRootView } from "react-native-gesture-handler";
@@ -15,14 +16,16 @@ export default function App() {
 	return (
 		<QueryClientProvider client={queryClient}>
 			<GestureHandlerRootView style={{ flex: 1 }}>
-				<Navigation
-					ref={navigationRef}
-					linking={{
-						enabled: "auto",
-						prefixes: ["lvwords://"],
-					}}
-					fallback={<Text>Loading...</Text>}
-				/>
+				<BottomSheetModalProvider>
+					<Navigation
+						ref={navigationRef}
+						linking={{
+							enabled: "auto",
+							prefixes: ["lvwords://"],
+						}}
+						fallback={<Text>Loading...</Text>}
+					/>
+				</BottomSheetModalProvider>
 			</GestureHandlerRootView>
 		</QueryClientProvider>
 	);

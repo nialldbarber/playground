@@ -1,8 +1,10 @@
 import { useNavigation } from "@react-navigation/native";
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { View } from "react-native";
 import { createStyleSheet, useStyles } from "react-native-unistyles";
 
+import type { BottomSheetMethods } from "@/app/components/BottomSheet";
+import { BottomSheet } from "@/app/components/BottomSheet";
 import { Button } from "@/app/components/Button/Button";
 import { Divider } from "@/app/components/Divider";
 import { Layout } from "@/app/components/Layout";
@@ -14,6 +16,14 @@ export function SignInScreen() {
 	const { navigate } = useNavigation<OnboardingSignUpScreenProps>();
 	const { styles } = useStyles(stylesheet);
 	const [loading, setLoading] = useState(true);
+
+	const bottomSheetRef = useRef<BottomSheetMethods>(null);
+	const openBottomSheet = () => {
+		bottomSheetRef.current?.openModal();
+	};
+	const closeBottomSheet = () => {
+		bottomSheetRef.current?.closeModal();
+	};
 
 	const [intervalLoading, setIntervalLoading] = useState(true);
 
@@ -76,12 +86,21 @@ export function SignInScreen() {
 							small
 						</Button>
 						<Button size="small">small</Button>
+						<Button size="small" onPress={openBottomSheet}>
+							open
+						</Button>
+						<Button size="small" onPress={closeBottomSheet}>
+							close
+						</Button>
 						<Button size="medium" variant="secondary">
 							medium
 						</Button>
 						<Button size="large" variant="tertiary">
 							large
 						</Button>
+						<BottomSheet ref={bottomSheetRef}>
+							<Text>Hello</Text>
+						</BottomSheet>
 						{/* <Button>With icon</Button> */}
 					</VStack>
 				</View>
