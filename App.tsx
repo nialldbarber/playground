@@ -7,26 +7,36 @@ import { queryClient } from "@/app/api";
 import { Text } from "@/app/components/Text";
 import "@/app/global.css";
 import { Navigation } from "@/app/navigation";
+import { LaunchDarkly } from "@/app/services/launch-darkly";
 
 import "./gesture-handler";
 
-export default function App() {
+if (__DEV__) {
+	require("@/app/utils/reactotron");
+}
+
+function App() {
 	const navigationRef = useNavigationContainerRef();
 
 	return (
 		<QueryClientProvider client={queryClient}>
-			<GestureHandlerRootView style={{ flex: 1 }}>
-				<BottomSheetModalProvider>
-					<Navigation
-						ref={navigationRef}
-						linking={{
-							enabled: "auto",
-							prefixes: ["lvwords://"],
-						}}
-						fallback={<Text>Loading...</Text>}
-					/>
-				</BottomSheetModalProvider>
-			</GestureHandlerRootView>
+			<LaunchDarkly>
+				<GestureHandlerRootView style={{ flex: 1 }}>
+					<BottomSheetModalProvider>
+						<Navigation
+							ref={navigationRef}
+							linking={{
+								enabled: "auto",
+								prefixes: ["lvwords://"],
+							}}
+							fallback={<Text>Loading...</Text>}
+						/>
+					</BottomSheetModalProvider>
+				</GestureHandlerRootView>
+			</LaunchDarkly>
 		</QueryClientProvider>
 	);
 }
+
+export default App;
+// export { default } from "./.storybook";

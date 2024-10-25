@@ -22,18 +22,14 @@ export function IndividualPokemonScreen() {
 		useNavigation<IndividualPokemonScreenNavigationProp>();
 	const { params } =
 		useRoute<RouteProp<PokemonStackParamList, "IndividualPokemon">>();
-	const { data, isLoading, error } = useGetIndividualPokemon(
-		params?.pokemonName,
-	);
-
-	console.log(data);
+	const pokemon = useGetIndividualPokemon(params?.pokemonName);
 
 	return (
 		<Layout goBack>
 			<View>
 				<View className="flex-row justify-between items-center py-3 px-5">
-					<Text className="text-4xl font-bold">{data?.name}</Text>
-					<Text className="text-4xl font-bold">{data?.height}</Text>
+					<Text className="text-4xl font-bold">{pokemon?.data?.name}</Text>
+					<Text className="text-4xl font-bold">{pokemon?.data?.height}</Text>
 				</View>
 				<Button onPress={() => preload("PokemonPics")}>
 					Would you like to see pics?

@@ -44,7 +44,7 @@ export function Text({
 		<NativeText
 			style={[styles.container(color), props.style]}
 			maxFontSizeMultiplier={1.5}
-			{...props}
+			{...(!props.style ? { ...props } : {})}
 		>
 			{renderChildren()}
 		</NativeText>

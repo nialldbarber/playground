@@ -3,7 +3,7 @@ const baseColors = {
 	black: "#000000",
 	transparent: "transparent",
 	primary: "#f95108",
-	secondary: "#90007e",
+	secondary: "#47474a",
 	tertiary: "#000000",
 	link: "#000000",
 	error: "#000000",

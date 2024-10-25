@@ -1,3 +1,7 @@
+import { getVersion } from "react-native-device-info";
+
+const appVersion = getVersion();
+
 interface RequestOptions extends RequestInit {
 	params?: Record<string, string>;
 	timeout?: number;
@@ -38,7 +42,6 @@ async function request<T>(
 ): Promise<T> {
 	const { headers = {}, params, body, timeout = 10000 } = options;
 	const url = buildUrl({ path, params, baseUrl });
-
 	const controller = new AbortController();
 	const id = setTimeout(() => controller.abort(), timeout);
 
@@ -47,6 +50,7 @@ async function request<T>(
 			method,
 			headers: {
 				"Content-Type": "application/json",
+				"App-Version": appVersion,
 				...headers,
 			},
 			body: body ? JSON.stringify(body) : undefined,
