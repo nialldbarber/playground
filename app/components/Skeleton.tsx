@@ -9,6 +9,7 @@ import Animated, {
 	withRepeat,
 	withTiming,
 } from "react-native-reanimated";
+import { createStyleSheet, useStyles } from "react-native-unistyles";
 
 import { spacing } from "@/app/design-system/tokens";
 
@@ -26,6 +27,7 @@ export const Skeleton = ({
 	style,
 	children,
 }: PropsWithChildren<SkeletonProps>) => {
+	const { styles } = useStyles(stylesheet);
 	const animatedValue = useSharedValue(-1);
 	const skeletonOpacity = useSharedValue(1);
 	const contentOpacity = useSharedValue(0);
@@ -68,10 +70,7 @@ export const Skeleton = ({
 	}));
 
 	return (
-		<Animated.View
-			className="overflow-hidden"
-			style={[{ width, height }, style]}
-		>
+		<Animated.View style={[{ width, height, ...styles.skeleton }, style]}>
 			<Animated.View style={[StyleSheet.absoluteFill, contentStyle]}>
 				{children}
 			</Animated.View>
@@ -126,3 +125,9 @@ Skeleton.Group = function SkeletonGroup({
 		</View>
 	);
 };
+
+const stylesheet = createStyleSheet(() => ({
+	skeleton: {
+		overflow: "hidden",
+	},
+}));

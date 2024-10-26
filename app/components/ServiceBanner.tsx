@@ -7,6 +7,7 @@ import {
 } from "date-fns";
 import { useMemo } from "react";
 import { View } from "react-native";
+import { createStyleSheet, useStyles } from "react-native-unistyles";
 
 import { Text } from "@/app/components/Text";
 
@@ -45,6 +46,8 @@ type Service = {
 };
 
 export function ServiceBanner({ service }: { service: Service }) {
+	const { styles } = useStyles(stylesheet);
+
 	const serviceDatePercentage = useMemo(() => {
 		const today = new Date();
 		const serviceDate = parseISO(service.serviceDate);
@@ -62,15 +65,38 @@ export function ServiceBanner({ service }: { service: Service }) {
 	}, [service.serviceDate]);
 
 	return (
-		<View className="bg-slate-200 items-center justify-center p-5 m-4 rounded-md min-h-[100]">
+		<View style={styles.container}>
 			<Text>{service.name}</Text>
-			<View className="bg-slate-300 p-2 rounded-md w-full">
+			<View style={styles.progressContainer}>
 				<Text>{service.serviceDate}</Text>
 				<View
-					className="bg-blue-500 h-2 mt-2 rounded-full"
-					style={{ width: `${serviceDatePercentage}%` }}
+					style={[{ width: `${serviceDatePercentage}%` }, styles.progress]}
 				/>
 			</View>
 		</View>
 	);
 }
+
+const stylesheet = createStyleSheet(({ colors, spacing, radii }) => ({
+	container: {
+		backgroundColor: colors.grey200,
+		alignItems: "center",
+		justifyContent: "center",
+		padding: spacing[5],
+		marginTop: spacing[4],
+		borderRadius: radii.md,
+		minHeight: 100,
+	},
+	progressContainer: {
+		backgroundColor: colors.grey300,
+		borderRadius: radii.md,
+		padding: spacing[2],
+		width: spacing.full,
+	},
+	progress: {
+		backgroundColor: colors.blue500,
+		height: spacing[2],
+		marginTop: spacing[2],
+		borderRadius: radii.full,
+	},
+}));

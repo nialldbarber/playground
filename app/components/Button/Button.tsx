@@ -49,7 +49,6 @@ export const Button = forwardRef<Animated.View, PropsWithChildren<Props>>(
 			isLoading = false,
 			animation = "scale",
 			onPress,
-			className,
 			role = "button",
 			style,
 			children,

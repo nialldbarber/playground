@@ -19,22 +19,24 @@ function App() {
 	const navigationRef = useNavigationContainerRef();
 
 	return (
-		<QueryClientProvider client={queryClient}>
-			<LaunchDarkly>
+		<BottomSheetModalProvider>
+			<QueryClientProvider client={queryClient}>
 				<GestureHandlerRootView style={{ flex: 1 }}>
-					<BottomSheetModalProvider>
-						<Navigation
-							ref={navigationRef}
-							linking={{
-								enabled: "auto",
-								prefixes: ["lvwords://"],
-							}}
-							fallback={<Text>Loading...</Text>}
-						/>
-					</BottomSheetModalProvider>
+					<LaunchDarkly>
+						<BottomSheetModalProvider>
+							<Navigation
+								ref={navigationRef}
+								linking={{
+									enabled: "auto",
+									prefixes: ["lvwords://"],
+								}}
+								fallback={<Text>Loading...</Text>}
+							/>
+						</BottomSheetModalProvider>
+					</LaunchDarkly>
 				</GestureHandlerRootView>
-			</LaunchDarkly>
-		</QueryClientProvider>
+			</QueryClientProvider>
+		</BottomSheetModalProvider>
 	);
 }
 

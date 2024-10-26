@@ -9,6 +9,7 @@ import { useSafeAreaInsets } from "react-native-safe-area-context";
 import { createStyleSheet, useStyles } from "react-native-unistyles";
 
 import { Spinner } from "@/app/components/Spinner";
+import { spacing } from "@/app/design-system/tokens";
 
 interface Props extends ScrollViewProps {
 	isLoading?: boolean;
@@ -55,7 +56,7 @@ export const Layout = forwardRef<Animated.ScrollView, PropsWithChildren<Props>>(
 				{...rest}
 			>
 				{goBack && (
-					<Pressable onPress={back} className="p-3">
+					<Pressable onPress={back} style={styles.button}>
 						<ArrowLeft2 size={30} color="black" />
 					</Pressable>
 				)}
@@ -70,5 +71,8 @@ const stylesheet = createStyleSheet(() => ({
 		flex: 1,
 		justifyContent: "center",
 		alignItems: "center",
+	},
+	button: {
+		padding: spacing[12],
 	},
 }));

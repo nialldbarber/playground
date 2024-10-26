@@ -1,4 +1,5 @@
-import type { HomeItemNavigation } from "@/app/navigation";
+import { createStyleSheet, useStyles } from "react-native-unistyles";
+
 import { useNavigation } from "@react-navigation/native";
 import { Pressable, useWindowDimensions } from "react-native";
 import Animated, {
@@ -6,6 +7,8 @@ import Animated, {
 	useSharedValue,
 	withSpring,
 } from "react-native-reanimated";
+
+import type { HomeItemNavigation } from "@/app/navigation";
 
 type Props = {
 	id: number;
@@ -16,6 +19,7 @@ export function Item({ id, index }: Props) {
 	const { navigate } = useNavigation<HomeItemNavigation>();
 	const { width } = useWindowDimensions();
 	const itemScale = useSharedValue(1);
+	const { styles } = useStyles(stylesheet);
 
 	const itemScaleStyles = useAnimatedStyle(() => ({
 		transform: [{ scale: itemScale.value }],
@@ -24,10 +28,7 @@ export function Item({ id, index }: Props) {
 	const itemWidth = width / 2 - 20;
 
 	return (
-		<Animated.View
-			style={itemScaleStyles}
-			className={`h-[200px] w-[${itemWidth}px]`}
-		>
+		<Animated.View style={[styles.container(itemWidth), itemScaleStyles]}>
 			<Pressable
 				onPress={() => navigate("HomeItem", { id })}
 				onPressIn={() => {
@@ -39,16 +40,24 @@ export function Item({ id, index }: Props) {
 			>
 				<Animated.Image
 					source={{ uri: `https://picsum.photos/id/${index + 100}/200` }}
-					style={{
-						width: "100%",
-						height: 200,
-						borderRadius: 10,
-						overflow: "hidden",
-					}}
+					style={styles.image}
 					sharedTransitionTag={`tag-${id}`}
-					className="rounded-lg overflow-hidden bg-red-400"
 				/>
 			</Pressable>
 		</Animated.View>
 	);
 }
+
+const stylesheet = createStyleSheet(({ colors, radii }) => ({
+	container: (width: number) => ({
+		height: 200,
+		width,
+	}),
+	image: {
+		borderRadius: radii.lg,
+		backgroundColor: colors.red400,
+		width: "100%",
+		height: 200,
+		overflow: "hidden",
+	},
+}));

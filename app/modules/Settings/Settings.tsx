@@ -16,9 +16,9 @@ export function SettingsScreen() {
 
 	return (
 		<View style={styles.container}>
-			<BlurView intensity={50} tint="dark" style={styles.blurView} />
+			<BlurView intensity={30} tint="dark" style={styles.blurView} />
 			<Layout>
-				<View className="flex-1 justify-center items-center">
+				<View style={styles.modal}>
 					<Button onPress={goBack}>Go to Home</Button>
 					<Divider size="5" visible={false} />
 					<Button variant="secondary" onPress={() => setIsSignedIn?.(false)}>
@@ -33,6 +33,11 @@ export function SettingsScreen() {
 const stylesheet = createStyleSheet(() => ({
 	container: {
 		flex: 1,
+	},
+	modal: {
+		flex: 1,
+		justifyContent: "center",
+		alignItems: "center",
 	},
 	blurView: {
 		position: "absolute",

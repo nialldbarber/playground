@@ -7,10 +7,12 @@ import { Skeleton } from "@/app/components/Skeleton";
 import { Text } from "@/app/components/Text";
 import { useGetWords } from "@/app/modules/Words/words.queries";
 import { FadeIn } from "@/app/utils/animations";
+import { createStyleSheet, useStyles } from "react-native-unistyles";
 
 export function WordScreen() {
 	const { width } = useWindowDimensions();
 	const words = useGetWords();
+	const { styles } = useStyles(stylesheet);
 	const [revealedIndices, setRevealedIndices] = useState<number[]>([]);
 
 	const handleRevealNext = () => {
@@ -25,12 +27,14 @@ export function WordScreen() {
 	return (
 		<>
 			<Layout>
-				<View className="flex-row justify-between items-center py-3 px-5">
-					<Text className="text-4xl font-bold">Words</Text>
+				<View style={styles.container}>
+					<Text size="4xl" weight="bold">
+						Words
+					</Text>
 				</View>
 				<View>
 					{words.isLoading && (
-						<View className="mt-5">
+						<View style={styles.skeletonContainer}>
 							<Skeleton.Group count={20}>
 								<Skeleton
 									isLoading={words.isLoading}
@@ -47,12 +51,11 @@ export function WordScreen() {
 					)}
 					<FadeIn isReady={words.isSuccess}>
 						{words?.data?.at(0)?.basics.map((flashcard, index) => (
-							<View
-								key={index}
-								className="flex-row justify-between items-center px-5 py-6"
-							>
-								<Text className="text-lg font-bold">{flashcard.english}</Text>
-								<Text className="text-lg font-bold">
+							<View key={index} style={styles.words}>
+								<Text size="lg" weight="bold">
+									{flashcard.english}
+								</Text>
+								<Text size="lg" weight="bold">
 									{revealedIndices.includes(index) ? flashcard.latvian : "???"}
 								</Text>
 							</View>
@@ -64,3 +67,23 @@ export function WordScreen() {
 		</>
 	);
 }
+
+const stylesheet = createStyleSheet(({ spacing }) => ({
+	container: {
+		flexDirection: "row",
+		justifyContent: "space-between",
+		alignItems: "center",
+		paddingVertical: 3,
+		paddingHorizontal: 5,
+	},
+	skeletonContainer: {
+		marginTop: spacing[5],
+	},
+	words: {
+		flexDirection: "row",
+		justifyContent: "space-between",
+		alignItems: "center",
+		paddingHorizontal: spacing[5],
+		paddingVertical: spacing[6],
+	},
+}));

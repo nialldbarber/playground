@@ -1,6 +1,4 @@
-import { getVersion } from "react-native-device-info";
-
-const appVersion = getVersion();
+import { appVersion } from "@/app/utils/deviceInfo";
 
 interface RequestOptions extends RequestInit {
 	params?: Record<string, string>;
@@ -50,7 +48,7 @@ async function request<T>(
 			method,
 			headers: {
 				"Content-Type": "application/json",
-				"App-Version": appVersion,
+				"x-app-version": appVersion,
 				...headers,
 			},
 			body: body ? JSON.stringify(body) : undefined,

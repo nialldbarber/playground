@@ -9,6 +9,7 @@ import Animated, {
 	withDelay,
 	withTiming,
 } from "react-native-reanimated";
+import { createStyleSheet, useStyles } from "react-native-unistyles";
 
 import { Button } from "@/app/components/Button/Button";
 import { Dots } from "@/app/components/Dots";
@@ -29,6 +30,7 @@ function SectionWrapper({
 	backgroundColor: string;
 }>) {
 	const { width, height } = useWindowDimensions();
+	const { styles } = useStyles(stylesheet);
 
 	const opacity = useSharedValue(0);
 	const transformY = useSharedValue(30);
@@ -58,8 +60,7 @@ function SectionWrapper({
 	return (
 		<View style={[{ backgroundColor }]}>
 			<Animated.View
-				style={[{ width, height }, animatedStyles]}
-				className="justify-center items-center"
+				style={[{ width, height }, styles.section, animatedStyles]}
 			>
 				{children}
 			</Animated.View>
@@ -73,6 +74,8 @@ export function OnboardingScreen() {
 	const { width } = useWindowDimensions();
 	const translateX = useSharedValue(0);
 	const currentIndex = useSharedValue(0);
+
+	const { styles } = useStyles(stylesheet);
 
 	const [currentIndexText, setCurrentIndexText] = useState(0);
 	const updateCurrentIndexState = (value: number) => {
@@ -137,18 +140,34 @@ export function OnboardingScreen() {
 							<Text color="white" size="4xl" weight="bold">
 								DOB
 							</Text>
-							<Button className="w-full" onPress={() => setIsSignedIn?.(true)}>
-								Log in
-							</Button>
+							<Button onPress={() => setIsSignedIn?.(true)}>Log in</Button>
 						</SectionWrapper>
 					</Animated.View>
 				</GestureDetector>
 			</Layout>
-			<View className="absolute bottom-5 w-full h-20 z-10">
-				<View className="flex items-center justify-center">
+			<View style={styles.dotsContainer}>
+				<View style={styles.dots}>
 					<Dots count={3} activeIndex={currentIndex} goToScreen={goToScreen} />
 				</View>
 			</View>
 		</>
 	);
 }
+
+const stylesheet = createStyleSheet(({ spacing }) => ({
+	dotsContainer: {
+		position: "absolute",
+		bottom: spacing[5],
+		width: spacing.full,
+		height: spacing[10],
+		zIndex: 10,
+	},
+	dots: {
+		alignItems: "center",
+		justifyContent: "center",
+	},
+	section: {
+		alignItems: "center",
+		justifyContent: "center",
+	},
+}));
