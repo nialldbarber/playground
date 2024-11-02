@@ -6,6 +6,5 @@ export function useGetCompatibleAppVersion() {
 	return useQuery({
 		queryKey: ["compatibleAppVersion"],
 		queryFn: getCompatibleAppVersion,
-		// staleTime: STALE.DAYS.ONE,
 	});
 }

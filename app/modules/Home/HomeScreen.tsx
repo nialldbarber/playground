@@ -17,6 +17,8 @@ import { Item } from "@/app/modules/Home/Item";
 
 import { useIsCompatibleAppVersion } from "@/app/api/compatibleAppVersion/useGetCompatibleAppVersion";
 import { Divider } from "@/app/components/Divider";
+import { VStack } from "@/app/components/Stacks/VStack";
+import type { VersionResponse } from "@/app/utils/deviceInfo";
 
 export function HomeScreen() {
 	const { navigate, setOptions } = useNavigation();
@@ -30,9 +32,8 @@ export function HomeScreen() {
 	const handlePresentModalPress = useCallback(() => {
 		bottomSheetModalRef.current?.present();
 	}, []);
-	const handleSheetChanges = useCallback((index: number) => {
-		console.log("handleSheetChanges", index);
-	}, []);
+
+	const handleButtonPress = (versionResponse: VersionResponse) => {};
 
 	useEffect(() => {
 		const timer = setTimeout(() => {
@@ -48,8 +49,10 @@ export function HomeScreen() {
 	}, [setOptions]);
 
 	useEffect(() => {
-		if (!isAppVersionCompatible) {
-			handlePresentModalPress();
+		if (isAppVersionCompatible !== "preferred") {
+			setTimeout(() => {
+				handlePresentModalPress();
+			}, 200);
 		}
 	}, [isAppVersionCompatible]);
 
@@ -61,18 +64,37 @@ export function HomeScreen() {
 			<BottomSheetModal
 				index={1}
 				ref={bottomSheetModalRef}
-				snapPoints={["50%"]}
+				snapPoints={["35%"]}
 				backdropComponent={BottomSheetBackdrop}
 			>
 				<BottomSheetView style={styles.bottomSheet}>
-					<Text size="3xl" weight="bold">
-						Uh oh!
-					</Text>
-					<Divider size="2" color="transparent" />
-					<Text weight="bold">
-						The app version you're on is not compatible with this version of the
-						app.
-					</Text>
+					{isAppVersionCompatible === "supported" && (
+						<VStack gap="3">
+							<Text size="2xl" weight="bold">
+								Well this is awkward!
+							</Text>
+							<Text>
+								There is a new version of the app available. Please update to
+								get a better experience.
+							</Text>
+							<Divider size="2" color="transparent" />
+							<Button>Update</Button>
+						</VStack>
+					)}
+					{isAppVersionCompatible === "unsupported" && (
+						<VStack gap="3">
+							<Text size="2xl" weight="bold">
+								Uh oh!
+							</Text>
+							<Divider size="2" color="transparent" />
+							<Text>
+								The app version you're on is not compatible with this version of
+								the app.
+							</Text>
+							<Divider size="2" color="transparent" />
+							<Button>Update</Button>
+						</VStack>
+					)}
 				</BottomSheetView>
 			</BottomSheetModal>
 			<Layout>
@@ -88,7 +110,6 @@ export function HomeScreen() {
 						Settings
 					</Button>
 				</View>
-				<Button onPress={handlePresentModalPress}>PRESS ME</Button>
 				<ServiceBanners />
 				<View style={styles.list}>
 					{Array.from({ length: 10 }).map((_, index) => {

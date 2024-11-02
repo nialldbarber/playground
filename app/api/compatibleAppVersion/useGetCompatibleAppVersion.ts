@@ -3,5 +3,11 @@ import { isAppVersionCompatible } from "@/app/utils/deviceInfo";
 
 export function useIsCompatibleAppVersion() {
 	const { data } = useGetCompatibleAppVersion();
-	return isAppVersionCompatible(data?.lowestCompatibleAppVersion ?? "");
+
+	const isCompatible = isAppVersionCompatible(
+		data?.minSupportedVersion ?? "",
+		data?.preferredVersion ?? "",
+	);
+
+	return isCompatible;
 }

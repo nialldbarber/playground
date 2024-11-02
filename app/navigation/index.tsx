@@ -3,7 +3,13 @@ import type { StaticParamList } from "@react-navigation/native";
 import { createStaticNavigation } from "@react-navigation/native";
 import type { NativeStackNavigationProp } from "@react-navigation/native-stack";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
-import { Book1, Grammerly, Home2, Profile } from "iconsax-react-native";
+import {
+	Book1,
+	Grammerly,
+	Home2,
+	I3DCubeScan,
+	Profile,
+} from "iconsax-react-native";
 
 import { SignInScreen } from "@/app/modules/Authentication/SignInScreen";
 import { SignOutScreen } from "@/app/modules/Authentication/SignOutScreen";
@@ -17,6 +23,14 @@ import { ProfileScreen } from "@/app/modules/Profile/ProfileScreen";
 import { SettingsScreen } from "@/app/modules/Settings/Settings";
 import { WordScreen } from "@/app/modules/Words/WordsScreen";
 import { useIsAuthenticated, useIsNotAuthenticated } from "@/app/state/auth";
+
+import { useIsCompatibleAppVersion } from "@/app/api/compatibleAppVersion/useGetCompatibleAppVersion";
+import { Components } from "../modules/Components/Components";
+
+const shouldNotShowAppUpdateModal = () =>
+	useIsAuthenticated() && useIsCompatibleAppVersion() !== "unsupported";
+const shouldShowAppUpdateModal = () =>
+	useIsAuthenticated() && useIsCompatibleAppVersion() === "unsupported";
 
 const HomeStack = createNativeStackNavigator({
 	initialRouteName: "Home",
@@ -57,6 +71,7 @@ const BottomTabStack = createBottomTabNavigator({
 		Profile: ProfileScreen,
 		Words: WordScreen,
 		PokemonStack,
+		Components,
 	},
 	screenOptions: ({ route }) => ({
 		headerShown: false,
@@ -65,7 +80,7 @@ const BottomTabStack = createBottomTabNavigator({
 			if (route.name === "HomeStack") {
 				return (
 					<Home2
-						size="32"
+						size="27"
 						color="#FF8A65"
 						variant={focused ? "Bold" : "Outline"}
 					/>
@@ -74,7 +89,7 @@ const BottomTabStack = createBottomTabNavigator({
 			if (route.name === "Profile") {
 				return (
 					<Profile
-						size="32"
+						size="27"
 						color="#FF8A65"
 						variant={focused ? "Bold" : "Outline"}
 					/>
@@ -83,7 +98,7 @@ const BottomTabStack = createBottomTabNavigator({
 			if (route.name === "Words") {
 				return (
 					<Book1
-						size="32"
+						size="27"
 						color="#FF8A65"
 						variant={focused ? "Bold" : "Outline"}
 					/>
@@ -92,7 +107,16 @@ const BottomTabStack = createBottomTabNavigator({
 			if (route.name === "PokemonStack") {
 				return (
 					<Grammerly
-						size="32"
+						size="27"
+						color="#FF8A65"
+						variant={focused ? "Bold" : "Outline"}
+					/>
+				);
+			}
+			if (route.name === "Components") {
+				return (
+					<I3DCubeScan
+						size="27"
 						color="#FF8A65"
 						variant={focused ? "Bold" : "Outline"}
 					/>
@@ -151,6 +175,17 @@ const RootStack = createNativeStackNavigator({
 				SignOut: SignOutScreen,
 			},
 		},
+		// UnsupportedAppModal: {
+		// 	if: shouldShowAppUpdateModal,
+		// 	screenOptions: {
+		// 		presentation: "modal",
+		// 		headerShown: false,
+		// 		contentStyle: { backgroundColor: "white" },
+		// 	},
+		// 	screens: {
+		// 		UnsupportedAppModal,
+		// 	},
+		// },
 	},
 });
 type RootStackParamList = StaticParamList<typeof RootStack>;
