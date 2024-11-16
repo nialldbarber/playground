@@ -9,18 +9,15 @@
 /* Begin PBXBuildFile section */
 		00E356F31AD99517003FC87E /* LatvianFlashcardsTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 00E356F21AD99517003FC87E /* LatvianFlashcardsTests.m */; };
 		01A59543D0B64B1B8070A065 /* PlusJakartaSans-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = B0215C4C7F134A66A50F6A04 /* PlusJakartaSans-Light.ttf */; };
-		0C80B921A6F3F58F76C31292 /* libPods-LatvianFlashcards.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 5DCACB8F33CDC322A6C60F78 /* libPods-LatvianFlashcards.a */; };
 		13B07FBC1A68108700A75B9A /* AppDelegate.mm in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB01A68108700A75B9A /* AppDelegate.mm */; };
 		13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 13B07FB51A68108700A75B9A /* Images.xcassets */; };
 		13B07FC11A68108700A75B9A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB71A68108700A75B9A /* main.m */; };
+		1ADC19188BEFFB40189691EA /* libPods-LatvianFlashcards.a in Frameworks */ = {isa = PBXBuildFile; fileRef = D0986C6F02E67E6EBC8DD55B /* libPods-LatvianFlashcards.a */; };
 		1E0514D612B0CE9D370EE375 /* PrivacyInfo.xcprivacy in Resources */ = {isa = PBXBuildFile; fileRef = C1BC966BD7A07198E52F328E /* PrivacyInfo.xcprivacy */; };
 		2BAF4BFB344443A4A73F0F43 /* PlusJakartaSans-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 0A88682F731B4D55AE21638C /* PlusJakartaSans-Bold.ttf */; };
 		2BCF15B94DA147C3802970AA /* PlusJakartaSans-BoldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 20D53DC80A444AA78355E648 /* PlusJakartaSans-BoldItalic.ttf */; };
 		2CD9BD68FFED4306819266F0 /* PlusJakartaSans-Italic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 55BD104AF45147329FBAD010 /* PlusJakartaSans-Italic.ttf */; };
-		3E9841F918353A1C7CE05486 /* ExpoModulesProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 721D4EC8A2E67B1DC9B30C41 /* ExpoModulesProvider.swift */; };
 		67AC62B68660467FB9E9FBED /* PlusJakartaSans-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 325FC1E8175249B2B2701E4C /* PlusJakartaSans-SemiBold.ttf */; };
-		6FAC869693273D173168CA5E /* ExpoModulesProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16B95F9116F84C69491BB10B /* ExpoModulesProvider.swift */; };
-		7699B88040F8A987B510C191 /* libPods-LatvianFlashcards-LatvianFlashcardsTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 19F6CBCC0A4E27FBF8BF4A61 /* libPods-LatvianFlashcards-LatvianFlashcardsTests.a */; };
 		81AB9BB82411601600AC10FF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */; };
 		95AD0990AF834D06AEFD0AA7 /* PlusJakartaSans-ExtraLightItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = DE5ECDE202704A56A96F421F /* PlusJakartaSans-ExtraLightItalic.ttf */; };
 		9DE3CE724A6D4DA8B3C73513 /* PlusJakartaSans-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = CF08C36F9CDF4CE5828A4D28 /* PlusJakartaSans-Regular.ttf */; };
@@ -30,6 +27,7 @@
 		B1BE57862A744C72B8254FE8 /* PlusJakartaSans-LightItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 0977DA8870884CD782A0F262 /* PlusJakartaSans-LightItalic.ttf */; };
 		C4843E7E12E344F3A811CF4A /* PlusJakartaSans-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = EDC14A40F25744269F2A648E /* PlusJakartaSans-Medium.ttf */; };
 		C9FC44A250ED45B2A65C1BC1 /* PlusJakartaSans-ExtraLight.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E487A601AD904E03ABEDA844 /* PlusJakartaSans-ExtraLight.ttf */; };
+		D965069B1C25EDE1F17DD020 /* libPods-LatvianFlashcards-LatvianFlashcardsTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 24128E3ED6CDA0065EE6207A /* libPods-LatvianFlashcards-LatvianFlashcardsTests.a */; };
 		EC429B95040F47049A61072A /* PlusJakartaSans-SemiBoldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 5E463AF652DD406EA692D2C0 /* PlusJakartaSans-SemiBoldItalic.ttf */; };
 /* End PBXBuildFile section */
 
@@ -56,25 +54,23 @@
 		13B07FB61A68108700A75B9A /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Info.plist; path = LatvianFlashcards/Info.plist; sourceTree = "<group>"; };
 		13B07FB71A68108700A75B9A /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = main.m; path = LatvianFlashcards/main.m; sourceTree = "<group>"; };
 		13B07FB81A68108700A75B9A /* PrivacyInfo.xcprivacy */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = PrivacyInfo.xcprivacy; path = LatvianFlashcards/PrivacyInfo.xcprivacy; sourceTree = "<group>"; };
-		16B95F9116F84C69491BB10B /* ExpoModulesProvider.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ExpoModulesProvider.swift; path = "Pods/Target Support Files/Pods-LatvianFlashcards-LatvianFlashcardsTests/ExpoModulesProvider.swift"; sourceTree = "<group>"; };
-		19F6CBCC0A4E27FBF8BF4A61 /* libPods-LatvianFlashcards-LatvianFlashcardsTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-LatvianFlashcards-LatvianFlashcardsTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		199852B1F678566C896AC5BC /* Pods-LatvianFlashcards-LatvianFlashcardsTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LatvianFlashcards-LatvianFlashcardsTests.release.xcconfig"; path = "Target Support Files/Pods-LatvianFlashcards-LatvianFlashcardsTests/Pods-LatvianFlashcards-LatvianFlashcardsTests.release.xcconfig"; sourceTree = "<group>"; };
 		20D53DC80A444AA78355E648 /* PlusJakartaSans-BoldItalic.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = undefined; includeInIndex = 0; lastKnownFileType = unknown; name = "PlusJakartaSans-BoldItalic.ttf"; path = "../assets/fonts/PlusJakartaSans-BoldItalic.ttf"; sourceTree = "<group>"; };
+		24128E3ED6CDA0065EE6207A /* libPods-LatvianFlashcards-LatvianFlashcardsTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-LatvianFlashcards-LatvianFlashcardsTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		27B05F9C558C402DB20A190E /* PlusJakartaSans-MediumItalic.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = undefined; includeInIndex = 0; lastKnownFileType = unknown; name = "PlusJakartaSans-MediumItalic.ttf"; path = "../assets/fonts/PlusJakartaSans-MediumItalic.ttf"; sourceTree = "<group>"; };
+		2F0BAF10855645ACB4CA237D /* Pods-LatvianFlashcards.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LatvianFlashcards.debug.xcconfig"; path = "Target Support Files/Pods-LatvianFlashcards/Pods-LatvianFlashcards.debug.xcconfig"; sourceTree = "<group>"; };
 		325FC1E8175249B2B2701E4C /* PlusJakartaSans-SemiBold.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = undefined; includeInIndex = 0; lastKnownFileType = unknown; name = "PlusJakartaSans-SemiBold.ttf"; path = "../assets/fonts/PlusJakartaSans-SemiBold.ttf"; sourceTree = "<group>"; };
-		3B4392A12AC88292D35C810B /* Pods-LatvianFlashcards.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LatvianFlashcards.debug.xcconfig"; path = "Target Support Files/Pods-LatvianFlashcards/Pods-LatvianFlashcards.debug.xcconfig"; sourceTree = "<group>"; };
 		3C64ECF7C75A4D6A88979C45 /* PlusJakartaSans-ExtraBold.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = undefined; includeInIndex = 0; lastKnownFileType = unknown; name = "PlusJakartaSans-ExtraBold.ttf"; path = "../assets/fonts/PlusJakartaSans-ExtraBold.ttf"; sourceTree = "<group>"; };
+		486DE0E9E69DF369C7E3A7BA /* Pods-LatvianFlashcards-LatvianFlashcardsTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LatvianFlashcards-LatvianFlashcardsTests.debug.xcconfig"; path = "Target Support Files/Pods-LatvianFlashcards-LatvianFlashcardsTests/Pods-LatvianFlashcards-LatvianFlashcardsTests.debug.xcconfig"; sourceTree = "<group>"; };
 		513FA8125F224D7591B21EB8 /* PlusJakartaSans-ExtraBoldItalic.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = undefined; includeInIndex = 0; lastKnownFileType = unknown; name = "PlusJakartaSans-ExtraBoldItalic.ttf"; path = "../assets/fonts/PlusJakartaSans-ExtraBoldItalic.ttf"; sourceTree = "<group>"; };
 		55BD104AF45147329FBAD010 /* PlusJakartaSans-Italic.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = undefined; includeInIndex = 0; lastKnownFileType = unknown; name = "PlusJakartaSans-Italic.ttf"; path = "../assets/fonts/PlusJakartaSans-Italic.ttf"; sourceTree = "<group>"; };
-		5709B34CF0A7D63546082F79 /* Pods-LatvianFlashcards.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LatvianFlashcards.release.xcconfig"; path = "Target Support Files/Pods-LatvianFlashcards/Pods-LatvianFlashcards.release.xcconfig"; sourceTree = "<group>"; };
-		5B7EB9410499542E8C5724F5 /* Pods-LatvianFlashcards-LatvianFlashcardsTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LatvianFlashcards-LatvianFlashcardsTests.debug.xcconfig"; path = "Target Support Files/Pods-LatvianFlashcards-LatvianFlashcardsTests/Pods-LatvianFlashcards-LatvianFlashcardsTests.debug.xcconfig"; sourceTree = "<group>"; };
-		5DCACB8F33CDC322A6C60F78 /* libPods-LatvianFlashcards.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-LatvianFlashcards.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		5E463AF652DD406EA692D2C0 /* PlusJakartaSans-SemiBoldItalic.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = undefined; includeInIndex = 0; lastKnownFileType = unknown; name = "PlusJakartaSans-SemiBoldItalic.ttf"; path = "../assets/fonts/PlusJakartaSans-SemiBoldItalic.ttf"; sourceTree = "<group>"; };
-		721D4EC8A2E67B1DC9B30C41 /* ExpoModulesProvider.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ExpoModulesProvider.swift; path = "Pods/Target Support Files/Pods-LatvianFlashcards/ExpoModulesProvider.swift"; sourceTree = "<group>"; };
 		81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = LaunchScreen.storyboard; path = LatvianFlashcards/LaunchScreen.storyboard; sourceTree = "<group>"; };
-		89C6BE57DB24E9ADA2F236DE /* Pods-LatvianFlashcards-LatvianFlashcardsTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LatvianFlashcards-LatvianFlashcardsTests.release.xcconfig"; path = "Target Support Files/Pods-LatvianFlashcards-LatvianFlashcardsTests/Pods-LatvianFlashcards-LatvianFlashcardsTests.release.xcconfig"; sourceTree = "<group>"; };
+		8FAFEC50694725E67AAA3D39 /* Pods-LatvianFlashcards.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LatvianFlashcards.release.xcconfig"; path = "Target Support Files/Pods-LatvianFlashcards/Pods-LatvianFlashcards.release.xcconfig"; sourceTree = "<group>"; };
 		B0215C4C7F134A66A50F6A04 /* PlusJakartaSans-Light.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = undefined; includeInIndex = 0; lastKnownFileType = unknown; name = "PlusJakartaSans-Light.ttf"; path = "../assets/fonts/PlusJakartaSans-Light.ttf"; sourceTree = "<group>"; };
 		C1BC966BD7A07198E52F328E /* PrivacyInfo.xcprivacy */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xml; name = PrivacyInfo.xcprivacy; path = LatvianFlashcards/PrivacyInfo.xcprivacy; sourceTree = "<group>"; };
 		CF08C36F9CDF4CE5828A4D28 /* PlusJakartaSans-Regular.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = undefined; includeInIndex = 0; lastKnownFileType = unknown; name = "PlusJakartaSans-Regular.ttf"; path = "../assets/fonts/PlusJakartaSans-Regular.ttf"; sourceTree = "<group>"; };
+		D0986C6F02E67E6EBC8DD55B /* libPods-LatvianFlashcards.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-LatvianFlashcards.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		DE5ECDE202704A56A96F421F /* PlusJakartaSans-ExtraLightItalic.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = undefined; includeInIndex = 0; lastKnownFileType = unknown; name = "PlusJakartaSans-ExtraLightItalic.ttf"; path = "../assets/fonts/PlusJakartaSans-ExtraLightItalic.ttf"; sourceTree = "<group>"; };
 		E487A601AD904E03ABEDA844 /* PlusJakartaSans-ExtraLight.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = undefined; includeInIndex = 0; lastKnownFileType = unknown; name = "PlusJakartaSans-ExtraLight.ttf"; path = "../assets/fonts/PlusJakartaSans-ExtraLight.ttf"; sourceTree = "<group>"; };
 		ED297162215061F000B7C4FE /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = System/Library/Frameworks/JavaScriptCore.framework; sourceTree = SDKROOT; };
@@ -86,7 +82,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7699B88040F8A987B510C191 /* libPods-LatvianFlashcards-LatvianFlashcardsTests.a in Frameworks */,
+				D965069B1C25EDE1F17DD020 /* libPods-LatvianFlashcards-LatvianFlashcardsTests.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -94,7 +90,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0C80B921A6F3F58F76C31292 /* libPods-LatvianFlashcards.a in Frameworks */,
+				1ADC19188BEFFB40189691EA /* libPods-LatvianFlashcards.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -137,8 +133,8 @@
 			isa = PBXGroup;
 			children = (
 				ED297162215061F000B7C4FE /* JavaScriptCore.framework */,
-				5DCACB8F33CDC322A6C60F78 /* libPods-LatvianFlashcards.a */,
-				19F6CBCC0A4E27FBF8BF4A61 /* libPods-LatvianFlashcards-LatvianFlashcardsTests.a */,
+				D0986C6F02E67E6EBC8DD55B /* libPods-LatvianFlashcards.a */,
+				24128E3ED6CDA0065EE6207A /* libPods-LatvianFlashcards-LatvianFlashcardsTests.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -165,14 +161,6 @@
 			path = "";
 			sourceTree = "<group>";
 		};
-		6EC336A3C6E6584CFE7D6B6E /* LatvianFlashcardsTests */ = {
-			isa = PBXGroup;
-			children = (
-				16B95F9116F84C69491BB10B /* ExpoModulesProvider.swift */,
-			);
-			name = LatvianFlashcardsTests;
-			sourceTree = "<group>";
-		};
 		832341AE1AAA6A7D00B99B32 /* Libraries */ = {
 			isa = PBXGroup;
 			children = (
@@ -189,7 +177,6 @@
 				83CBBA001A601CBA00E9B192 /* Products */,
 				2D16E6871FA4F8E400B85C8A /* Frameworks */,
 				BBD78D7AC51CEA395F1C20DB /* Pods */,
-				FC224FCB939A5C68DFEF9A21 /* ExpoModulesProviders */,
 				6B817F244B394BF0B039B87D /* Resources */,
 			);
 			indentWidth = 2;
@@ -209,29 +196,12 @@
 		BBD78D7AC51CEA395F1C20DB /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				3B4392A12AC88292D35C810B /* Pods-LatvianFlashcards.debug.xcconfig */,
-				5709B34CF0A7D63546082F79 /* Pods-LatvianFlashcards.release.xcconfig */,
-				5B7EB9410499542E8C5724F5 /* Pods-LatvianFlashcards-LatvianFlashcardsTests.debug.xcconfig */,
-				89C6BE57DB24E9ADA2F236DE /* Pods-LatvianFlashcards-LatvianFlashcardsTests.release.xcconfig */,
+				2F0BAF10855645ACB4CA237D /* Pods-LatvianFlashcards.debug.xcconfig */,
+				8FAFEC50694725E67AAA3D39 /* Pods-LatvianFlashcards.release.xcconfig */,
+				486DE0E9E69DF369C7E3A7BA /* Pods-LatvianFlashcards-LatvianFlashcardsTests.debug.xcconfig */,
+				199852B1F678566C896AC5BC /* Pods-LatvianFlashcards-LatvianFlashcardsTests.release.xcconfig */,
 			);
 			path = Pods;
-			sourceTree = "<group>";
-		};
-		DF608C16DC43B28E38B49056 /* LatvianFlashcards */ = {
-			isa = PBXGroup;
-			children = (
-				721D4EC8A2E67B1DC9B30C41 /* ExpoModulesProvider.swift */,
-			);
-			name = LatvianFlashcards;
-			sourceTree = "<group>";
-		};
-		FC224FCB939A5C68DFEF9A21 /* ExpoModulesProviders */ = {
-			isa = PBXGroup;
-			children = (
-				DF608C16DC43B28E38B49056 /* LatvianFlashcards */,
-				6EC336A3C6E6584CFE7D6B6E /* LatvianFlashcardsTests */,
-			);
-			name = ExpoModulesProviders;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -241,13 +211,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 00E357021AD99517003FC87E /* Build configuration list for PBXNativeTarget "LatvianFlashcardsTests" */;
 			buildPhases = (
-				A55EABD7B0C7F3A422A6CC61 /* [CP] Check Pods Manifest.lock */,
-				3340235C1884B15348DDD8B3 /* [Expo] Configure project */,
+				FA129F0638355A31275CF35F /* [CP] Check Pods Manifest.lock */,
 				00E356EA1AD99517003FC87E /* Sources */,
 				00E356EB1AD99517003FC87E /* Frameworks */,
 				00E356EC1AD99517003FC87E /* Resources */,
-				C59DA0FBD6956966B86A3779 /* [CP] Embed Pods Frameworks */,
-				F6A41C54EA430FDDC6A6ED99 /* [CP] Copy Pods Resources */,
+				C84937A9B27CD7500A065DF2 /* [CP] Embed Pods Frameworks */,
+				957251CAD456485D9B9FCC6D /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -263,14 +232,13 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 13B07F931A680F5B00A75B9A /* Build configuration list for PBXNativeTarget "LatvianFlashcards" */;
 			buildPhases = (
-				C38B50BA6285516D6DCD4F65 /* [CP] Check Pods Manifest.lock */,
-				E6D9F1801064E04E468C9CFE /* [Expo] Configure project */,
+				6981B2C1AE8362FF1722ACAC /* [CP] Check Pods Manifest.lock */,
 				13B07F871A680F5B00A75B9A /* Sources */,
 				13B07F8C1A680F5B00A75B9A /* Frameworks */,
 				13B07F8E1A680F5B00A75B9A /* Resources */,
 				00DD1BFF1BD5951E006B06BC /* Bundle React Native code and images */,
-				00EEFC60759A1932668264C0 /* [CP] Embed Pods Frameworks */,
-				E235C05ADACE081382539298 /* [CP] Copy Pods Resources */,
+				DB5A5A4F385BA2CE1DE661D6 /* [CP] Embed Pods Frameworks */,
+				74F3FC220531DBC5B95FEA09 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -366,67 +334,9 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "if [[ -f \"$PODS_ROOT/../.xcode.env\" ]]; then\n  source \"$PODS_ROOT/../.xcode.env\"\nfi\nif [[ -f \"$PODS_ROOT/../.xcode.env.local\" ]]; then\n  source \"$PODS_ROOT/../.xcode.env.local\"\nfi\n\n# The project root by default is one level up from the ios directory\nexport PROJECT_ROOT=\"$PROJECT_DIR\"/..\n\nif [[ \"$CONFIGURATION\" = *Debug* ]]; then\n  export SKIP_BUNDLING=1\nfi\nif [[ -z \"$ENTRY_FILE\" ]]; then\n  # Set the entry JS file using the bundler's entry resolution.\n  export ENTRY_FILE=\"$(\"$NODE_BINARY\" -e \"require('expo/scripts/resolveAppEntry')\" \"$PROJECT_ROOT\" ios absolute | tail -n 1)\"\nfi\n\nif [[ -z \"$CLI_PATH\" ]]; then\n  # Use Expo CLI\n  export CLI_PATH=\"$(\"$NODE_BINARY\" --print \"require.resolve('@expo/cli')\")\"\nfi\nif [[ -z \"$BUNDLE_COMMAND\" ]]; then\n  # Default Expo CLI command for bundling\n  export BUNDLE_COMMAND=\"export:embed\"\nfi\n\n`\"$NODE_BINARY\" --print \"require('path').dirname(require.resolve('react-native/package.json')) + '/scripts/react-native-xcode.sh'\"`\n";
+			shellScript = "set -e\n\nWITH_ENVIRONMENT=\"$REACT_NATIVE_PATH/scripts/xcode/with-environment.sh\"\nREACT_NATIVE_XCODE=\"$REACT_NATIVE_PATH/scripts/react-native-xcode.sh\"\n\n/bin/sh -c \"$WITH_ENVIRONMENT $REACT_NATIVE_XCODE\"\n";
 		};
-		00EEFC60759A1932668264C0 /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-LatvianFlashcards/Pods-LatvianFlashcards-frameworks-${CONFIGURATION}-input-files.xcfilelist",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-LatvianFlashcards/Pods-LatvianFlashcards-frameworks-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-LatvianFlashcards/Pods-LatvianFlashcards-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		3340235C1884B15348DDD8B3 /* [Expo] Configure project */ = {
-			isa = PBXShellScriptBuildPhase;
-			alwaysOutOfDate = 1;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-			);
-			name = "[Expo] Configure project";
-			outputFileListPaths = (
-			);
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "# This script configures Expo modules and generates the modules provider file.\nbash -l -c \"./Pods/Target\\ Support\\ Files/Pods-LatvianFlashcards-LatvianFlashcardsTests/expo-configure-project.sh\"\n";
-		};
-		A55EABD7B0C7F3A422A6CC61 /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
-				"${PODS_ROOT}/Manifest.lock",
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputFileListPaths = (
-			);
-			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-LatvianFlashcards-LatvianFlashcardsTests-checkManifestLockResult.txt",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
-		C38B50BA6285516D6DCD4F65 /* [CP] Check Pods Manifest.lock */ = {
+		6981B2C1AE8362FF1722ACAC /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -448,24 +358,7 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
-		C59DA0FBD6956966B86A3779 /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-LatvianFlashcards-LatvianFlashcardsTests/Pods-LatvianFlashcards-LatvianFlashcardsTests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-LatvianFlashcards-LatvianFlashcardsTests/Pods-LatvianFlashcards-LatvianFlashcardsTests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-LatvianFlashcards-LatvianFlashcardsTests/Pods-LatvianFlashcards-LatvianFlashcardsTests-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		E235C05ADACE081382539298 /* [CP] Copy Pods Resources */ = {
+		74F3FC220531DBC5B95FEA09 /* [CP] Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -482,26 +375,7 @@
 			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-LatvianFlashcards/Pods-LatvianFlashcards-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		E6D9F1801064E04E468C9CFE /* [Expo] Configure project */ = {
-			isa = PBXShellScriptBuildPhase;
-			alwaysOutOfDate = 1;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-			);
-			name = "[Expo] Configure project";
-			outputFileListPaths = (
-			);
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "# This script configures Expo modules and generates the modules provider file.\nbash -l -c \"./Pods/Target\\ Support\\ Files/Pods-LatvianFlashcards/expo-configure-project.sh\"\n";
-		};
-		F6A41C54EA430FDDC6A6ED99 /* [CP] Copy Pods Resources */ = {
+		957251CAD456485D9B9FCC6D /* [CP] Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -518,6 +392,62 @@
 			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-LatvianFlashcards-LatvianFlashcardsTests/Pods-LatvianFlashcards-LatvianFlashcardsTests-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
+		C84937A9B27CD7500A065DF2 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-LatvianFlashcards-LatvianFlashcardsTests/Pods-LatvianFlashcards-LatvianFlashcardsTests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-LatvianFlashcards-LatvianFlashcardsTests/Pods-LatvianFlashcards-LatvianFlashcardsTests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-LatvianFlashcards-LatvianFlashcardsTests/Pods-LatvianFlashcards-LatvianFlashcardsTests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		DB5A5A4F385BA2CE1DE661D6 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-LatvianFlashcards/Pods-LatvianFlashcards-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-LatvianFlashcards/Pods-LatvianFlashcards-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-LatvianFlashcards/Pods-LatvianFlashcards-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		FA129F0638355A31275CF35F /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-LatvianFlashcards-LatvianFlashcardsTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -526,7 +456,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				00E356F31AD99517003FC87E /* LatvianFlashcardsTests.m in Sources */,
-				6FAC869693273D173168CA5E /* ExpoModulesProvider.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -536,7 +465,6 @@
 			files = (
 				13B07FBC1A68108700A75B9A /* AppDelegate.mm in Sources */,
 				13B07FC11A68108700A75B9A /* main.m in Sources */,
-				3E9841F918353A1C7CE05486 /* ExpoModulesProvider.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -553,7 +481,7 @@
 /* Begin XCBuildConfiguration section */
 		00E356F61AD99517003FC87E /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 5B7EB9410499542E8C5724F5 /* Pods-LatvianFlashcards-LatvianFlashcardsTests.debug.xcconfig */;
+			baseConfigurationReference = 486DE0E9E69DF369C7E3A7BA /* Pods-LatvianFlashcards-LatvianFlashcardsTests.debug.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				GCC_PREPROCESSOR_DEFINITIONS = (
@@ -572,7 +500,6 @@
 					"-lc++",
 					"$(inherited)",
 				);
-				OTHER_SWIFT_FLAGS = "$(inherited) -D EXPO_CONFIGURATION_DEBUG";
 				PRODUCT_BUNDLE_IDENTIFIER = "org.reactjs.native.example.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/LatvianFlashcards.app/LatvianFlashcards";
@@ -581,7 +508,7 @@
 		};
 		00E356F71AD99517003FC87E /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 89C6BE57DB24E9ADA2F236DE /* Pods-LatvianFlashcards-LatvianFlashcardsTests.release.xcconfig */;
+			baseConfigurationReference = 199852B1F678566C896AC5BC /* Pods-LatvianFlashcards-LatvianFlashcardsTests.release.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				COPY_PHASE_STRIP = NO;
@@ -597,7 +524,6 @@
 					"-lc++",
 					"$(inherited)",
 				);
-				OTHER_SWIFT_FLAGS = "$(inherited) -D EXPO_CONFIGURATION_RELEASE";
 				PRODUCT_BUNDLE_IDENTIFIER = "org.reactjs.native.example.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/LatvianFlashcards.app/LatvianFlashcards";
@@ -606,7 +532,7 @@
 		};
 		13B07F941A680F5B00A75B9A /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 3B4392A12AC88292D35C810B /* Pods-LatvianFlashcards.debug.xcconfig */;
+			baseConfigurationReference = 2F0BAF10855645ACB4CA237D /* Pods-LatvianFlashcards.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
@@ -623,7 +549,6 @@
 					"-ObjC",
 					"-lc++",
 				);
-				OTHER_SWIFT_FLAGS = "$(inherited) -D EXPO_CONFIGURATION_DEBUG";
 				PRODUCT_BUNDLE_IDENTIFIER = "org.reactjs.native.example.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = LatvianFlashcards;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
@@ -634,7 +559,7 @@
 		};
 		13B07F951A680F5B00A75B9A /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 5709B34CF0A7D63546082F79 /* Pods-LatvianFlashcards.release.xcconfig */;
+			baseConfigurationReference = 8FAFEC50694725E67AAA3D39 /* Pods-LatvianFlashcards.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
@@ -650,7 +575,6 @@
 					"-ObjC",
 					"-lc++",
 				);
-				OTHER_SWIFT_FLAGS = "$(inherited) -D EXPO_CONFIGURATION_RELEASE";
 				PRODUCT_BUNDLE_IDENTIFIER = "org.reactjs.native.example.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = LatvianFlashcards;
 				SWIFT_VERSION = 5.0;
